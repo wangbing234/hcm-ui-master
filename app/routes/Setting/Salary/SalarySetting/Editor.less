@@ -1,0 +1,40 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+
+.editor {
+  outline: none;
+  width: 100%;
+  border: 1px solid #D8D8D8;
+  border-radius: @base-border-radius;
+  padding: 10px;
+  height: 190px;
+  line-height: 27px;
+  font-size: 14px;
+  overflow: auto;
+  word-break: break-all;
+  display: inline-block;
+  // -webkit-user-modify: read-write-plaintext-only; 如果设置，会导致 contenteditable="false" 也能编辑
+  &:empty:before {
+    content: attr(placeholder);
+    display: block;
+    color: #aaa;
+  }
+  &[disabled] {
+    background: #f5f5f5;
+    cursor: not-allowed;
+  }
+  :global {
+    .var {
+      display: inline-block;
+      margin: 2px 5px;
+      color: @primary-color;
+      background-color: @primary-color-light;
+      font-weight: 500;
+      border-radius: @base-border-radius;
+      border: none;
+    }
+  }
+}
+
+

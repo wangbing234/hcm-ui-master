@@ -1,0 +1,89 @@
+@import '~assets/css/variables.less';
+.salaryList {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+
+    .title {
+      margin-right: 40px;
+      color: #333333;
+      font-size: 24px;
+    }
+
+    .titlePrefix {
+      border-right: 2px solid #D8D8D8;
+      padding-right: 10px;
+      margin-right: 10px;
+    }
+
+    .keyword {
+      width: 200px;
+      font-size: 13px;
+      :global(.ant-input) {
+        background-color: transparent;
+        height: 36px;
+      }
+    }
+
+    .actions {
+      flex: 1;
+      text-align: right;
+
+      :global(.ant-btn) {
+        margin-left: 10px;
+        height: 36px;
+        font-weight:500;
+
+        &:first-of-type {
+          color: #666;
+          width: 152px;
+          &:hover {
+            color: @primary-color;
+          }
+        }
+        &:nth-of-type(2) {
+          width: 124px;
+        }
+        &:last-of-type {
+          width: 96px;
+        }
+      }
+    }
+  }
+  .salaryListContent {
+    padding: 20px;
+    flex: 1;
+  }
+
+
+  .avatarWrapper {
+    height: 36px;
+    display: inline-block;
+    width: 36px;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 15px;
+    border-radius: 50%;
+    .avatar {
+      display: table;
+      width: 36px;
+      height: 36px;
+      span {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+}
+

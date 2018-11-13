@@ -1,0 +1,44 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+@prefix-cls: ~'ant-input';
+
+:global {
+  .@{prefix-cls} {
+    transition: all 0.15s;
+    font-size: 13px;
+    &:focus {
+      box-shadow: none;
+    }
+    &-transparent {
+      background-color: transparent;
+      input {
+        background-color: transparent;
+      }
+    }
+    &-shadow {
+      box-shadow: 0 1px 5px 0 rgba(51, 51, 51, 0.2);
+      .border-radius(@base-border-radius);
+      &:focus {
+        border-color: lighten(@primary-color, 5%);
+        box-shadow: 0 5px 15px 0 rgba(51, 51, 51, 0.2);
+      }
+    }
+    &-error {
+      border-color: @danger-color;
+      &:focus {
+        border-color: @danger-color-middle;
+        box-shadow: 0 0 0 2px rgba(241, 91, 80, 0.2);
+      }
+      &:hover {
+        border-color: @danger-color;
+      }
+    }
+    &-search {
+      &-icon {
+        transform: scale(1.2);
+        color: @dark-color;
+      }
+    }
+  }
+}

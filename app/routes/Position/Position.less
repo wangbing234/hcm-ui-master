@@ -1,0 +1,77 @@
+.position {
+  padding: 20px;
+}
+.header {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  flex: none;
+
+  & .name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-right: 40px;
+  }
+
+  & .filterBar {
+    display: flex;
+    flex: 1;
+  }
+
+  & .filter {
+    width: 120px;
+    margin-right: 10px;
+    font-size: 13px;
+
+    :global(.ant-select-selection) {
+      background-color: transparent;
+    }
+  }
+
+  & .keyword {
+    width: 180px;
+    font-size: 13px;
+    :global(.ant-input) {
+      background-color: transparent;
+    }
+  }
+}
+
+.confirm {
+  & :global(.ant-modal-body) {
+    padding: 15px 20px 20px 20px;
+  }
+  & .title {
+    color: #333;
+    font-size: 16px;
+    line-height: 30px;
+  }
+  & :global(.icon-o-info) {
+    font-size: 20px;
+    color: #337dbc;
+  }
+  & .footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    & :global(.ant-btn) {
+      width: 100px;
+    }
+  }
+}
+
+.tooltip {
+  &:global(.ant-tooltip) {
+    padding-top: 0;
+  }
+  & :global(.ant-tooltip-arrow) {
+    display: none;
+  }
+  & :global(.ant-tooltip-inner) {
+    max-width: none;
+    min-height: 0;
+    background-color: #556a7d;
+    padding: 2px;
+  }
+}

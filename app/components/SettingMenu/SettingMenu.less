@@ -1,0 +1,32 @@
+@import '~assets/css/variables.less';
+
+.groupWrapper {
+  &:first-child {
+    margin-top: 18px;
+  }
+}
+
+.groupName {
+  height: 60px;
+  line-height: 60px;
+  padding-left: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  color: @dark-color;
+}
+
+.menuItem {
+  border-left: 4px solid transparent;
+  height: 48px;
+  line-height: 48px;
+  padding-left: 16px;
+  font-size: 14px;
+  color: @dark-color;
+  cursor: pointer;
+  margin-right: -1px;
+}
+
+.selectedItem {
+  border-left: 4px solid @success-color;
+  background: @white;
+}

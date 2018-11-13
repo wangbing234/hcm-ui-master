@@ -1,0 +1,42 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+@prefix-cls: ~'ant-calendar-picker';
+
+:global {
+  .@{prefix-cls} {
+    transition: all 0.15s;
+    font-size: 13px;
+    &:focus {
+      box-shadow: none;
+    }
+    .@{prefix-cls}-icon {
+      &::after {
+        content: '\e801';
+        color: #333;
+        font-family: uuicon, sans-serif !important;
+      }
+    }
+    &-clear {
+      color: #333;
+    }
+    &-error {
+      .ant-input {
+        border: 1px solid @danger-color;
+        border-radius: 4px;
+        &:focus {
+          border-color: @danger-color-middle;
+          box-shadow: 0 0 0 2px rgba(241, 91, 80, 0.2);
+        }
+        &:hover {
+          border-color: @danger-color !important;
+        }
+      }
+    }
+    &-transparent {
+      .ant-input {
+        background: transparent;
+      }
+    }
+  }
+}

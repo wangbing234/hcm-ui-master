@@ -1,0 +1,26 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+@prefix-cls: ~'ant-select-tree';
+
+
+:global {
+  .@{prefix-cls} {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    li {
+      margin: 0;
+      .@{prefix-cls}-node-content-wrapper{
+        border-radius: 0;
+        padding: 6px 10px;
+        &:hover {
+          background-color: @gray-color-light;
+        }
+        &.@{prefix-cls}-node-selected {
+          background-color: @primary-color;
+          color: @white;
+        }
+      }
+    }
+  }
+}

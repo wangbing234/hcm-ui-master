@@ -1,0 +1,37 @@
+@import '~assets/css/variables.less';
+
+.label {
+  // color: @danger-color;
+  display: block;
+  margin-bottom: 3px;
+  margin-top: 2px;
+  font-size: 13px;
+  color: @grayer-color;
+  height: 18px;
+  line-height: 18px;
+}
+
+.isRequired {
+  &::after {
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    margin-left: 4px;
+    content: '*';
+    // font-family: SimSun;
+    font-size: 13px;
+  }
+}
+
+.errorMessage {
+  font-size: 13px;
+  color: @danger-color;
+  height: 18px;
+  line-height: 18px;
+}
+
+.tooltip{
+  position: absolute;
+  left: 203px;
+  top: 161px;
+}

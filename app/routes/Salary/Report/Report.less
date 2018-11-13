@@ -1,0 +1,217 @@
+@import '~assets/css/variables.less';
+.unaccounted {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background:rgba(249,249,249,1);
+
+  .header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    background:rgba(249,249,249,1);
+
+
+    .title {
+      
+      font-size:24px;
+      font-family:PingFangSC-Semibold;
+      font-weight:600;
+      color:rgba(51,51,51,1);
+      line-height:36px;
+      padding-right: 40px;
+    }
+
+    .titlePrefix {
+      border-right: 2px solid #D8D8D8;
+      padding-right: 10px;
+      margin-right: 10px;
+    }
+
+    .keyword {
+      width:200px;
+      height:36px;
+      background:rgba(255,255,255,0);
+      border-radius:4px;
+      // border:1px solid rgba(216,216,216,1);
+      :global(.ant-input) {
+        background-color: transparent;
+        height: 36px;
+        font-family:PingFangSC-Medium;
+        font-weight:500;
+      }
+    }
+
+    .actions {
+      flex: 1;
+      text-align: right;
+
+      :global(.ant-btn) {
+        margin-left: 10px;
+        height: 36px;
+        font-weight:500;
+
+        &:first-of-type {
+          width:124px;
+          height:36px;
+          background:rgba(255,255,255,1);
+          border-radius:4px;
+          border:1px solid rgba(216,216,216,1);
+          
+        }
+        &:nth-of-type(2) {
+          width: 124px;
+        }
+        &:last-of-type {
+          width:147px;
+          height:36px;
+          background:rgba(51,125,188,1);
+          border-radius:4px;
+        }
+      }
+    }
+  }
+  .salaryListContent {
+    padding: 20px;
+    flex: 1;
+  }
+
+
+}
+.report{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background:rgba(249,249,249,1);
+    .header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    background:rgba(249,249,249,1);
+    .title {
+        padding-right: 10px;
+        margin-right: 10px;
+        font-size:24px;
+        font-family:PingFangSC-Semibold;
+        font-weight:600;
+        color:rgba(51,51,51,1);
+        line-height:36px;
+    }
+  
+  }
+  i{
+    font-style: normal;
+    margin-right:20px; 
+    color:#337DBC;
+  
+  }
+  
+  :global(.ant-list-item){
+    height:76px;
+    margin: 20px;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 2px 2px 0px rgba(51,51,51,0.2);
+    border-radius:4px;
+    &:hover {
+      background:rgba(219,237,255,1);
+      cursor: pointer;
+
+    }
+  }
+  :global(.ant-list-item-meta){
+    margin-left: 20px;
+  }
+  
+  :global(.ant-list-item-meta-title){
+    margin-top:10px;
+    width:169px;
+    height:36px;
+    font-size:16px;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    line-height:36px;
+  }
+  :global(.ant-pagination ){
+    float: none;
+    text-align: center;
+  }
+  .header1{
+    margin: 20px 20px 20px 0;
+    
+  }
+  .date{
+    float: right;
+    width:240px;
+    height:36px;
+    background:rgba(255,255,255,0);
+   
+  }
+  
+  .title1, .title2{
+    margin: 20px;
+  }
+  .arrow{
+    width:0;
+    height: 0;
+    border: 10px solid #000;
+    border-bottom-color: #000;
+  }
+  
+}
+
+.tabs{
+  background:rgba(255,255,255,1);
+}
+.button{
+  float: right;
+  margin: 40px;
+  
+}
+.table{
+  background:rgba(255,255,255,1);
+  box-shadow:0px 2px 2px 0px rgba(51,51,51,0.2);
+  border-radius:4px;
+  margin: 20px;
+  padding: 76px 20px;
+  :global {
+    .ant-table-thead > tr > th {
+      text-align: center;
+    }
+}
+}
+.confirm{
+  
+  width:600px;
+  height:300px;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 15px 30px 0px rgba(51,51,51,0.15);
+  border-radius:4px;
+  .con{
+    padding-left: 20px;
+  }
+  :global(.ant-modal-close-x){
+    padding: 40px 40px 0 0;
+    font-size:24px;
+    font-family:100offerfont;
+    color:rgba(153,153,153,1);
+    line-height:33px;
+  }
+  :global(.ant-modal-header){
+    border-bottom: none;
+    padding:40px 0 0 40px;
+  }
+  :global(.ant-modal-footer){
+    border: none;
+    padding: 87px 40px 40px 0 ;
+  }
+}
+:global(.ant-list-empty-text) {
+  padding-top: 254px;
+  height: 100%;
+  margin: 20px;
+  box-shadow:0px 2px 2px 0px rgba(51,51,51,0.2);
+  border-radius:4px;
+  background: transparent url('assets/images/empty.png') center center no-repeat;
+  background-size: 97px 97px;
+}

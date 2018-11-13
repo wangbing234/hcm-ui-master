@@ -1,0 +1,46 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+.main {
+  padding: 40px 20px;
+  background-color: #fff;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  color: @dark-color;
+  line-height: 33px;
+  margin-bottom: 15px;
+}
+
+.line {
+  border-bottom: 1px solid #eaeaea;
+  width: 100%;
+  line-height: 38px;
+   & :global(.ant-input-number) {
+  //  width: 500px;
+   width:calc(100% - 78px);
+  }
+  & :global(.ant-btn) {
+     width:68px;
+    }
+}
+
+.close {
+  color: rgba(51, 125, 188, 1);
+  cursor: pointer;
+}
+
+.ant-input-number-input {
+  width: 300px;
+}
+
+.setting {
+  cursor: pointer;
+  padding-right: 0;
+  color: rgba(51, 125, 188, 1);
+}

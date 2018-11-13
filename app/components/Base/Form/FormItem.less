@@ -1,0 +1,31 @@
+@import '~assets/css/variables.less';
+
+.label {
+  display: block;
+  margin-bottom: 3px;
+  margin-top: 2px;
+  font-size: 13px;
+  color: @grayer-color;
+  height: 18px;
+  line-height: 18px;
+}
+
+.required {
+  &::after {
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    margin-left: 4px;
+    content: '*';
+    // font-family: SimSun;
+    font-size: 13px;
+  }
+}
+
+:global(.ant-form-item) {
+  margin-bottom: 0;
+}
+
+:global(.ant-form-item-control) {
+  line-height: normal;
+}

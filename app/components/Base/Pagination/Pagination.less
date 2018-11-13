@@ -1,0 +1,43 @@
+@import '~assets/css/variables.less';
+
+@prefix-cls: ~'ant-pagination';
+
+:global {
+  .@{prefix-cls} {
+    &-item {
+      border-radius: 100px;
+      border-color: transparent;
+      a {
+        color: #999;
+      }
+      &:focus,
+      &:hover {
+        border-color: @primary-color-light;
+        background-color: @primary-color-light;
+        a {
+          color: #333;
+        }
+      }
+      &-active {
+        border-color: @primary-color-light;
+        background-color: @primary-color-light;
+        a {
+          color: #333;
+        }
+      }
+    }
+    &-prev,
+    &-next {
+      a {
+        color: #999;
+      }
+    }
+    &-prev &-item-link,
+    &-next &-item-link {
+      border-radius: 100px;
+      &:after {
+        transform: scaleY(1.2);
+      }
+    }
+  }
+}

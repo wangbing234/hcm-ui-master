@@ -1,0 +1,112 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+.loading {
+  margin-top: 50px;
+  text-align: center;
+  width: 360px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  > .header {
+    height: 22px;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    color: @dark-color;
+    margin: 0 0 20px 0;
+    > .editBtn {
+      float: right;
+    }
+  }
+}
+
+.container {
+  width: 360px;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 10px;
+
+  > .title {
+    width: 340px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  > .value {
+    width: 340px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  > .reason {
+    width: 340px;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  > .attachment {
+    width: 340px;
+    height: 49px;
+    line-height: 49px;
+    border-radius: 4px;
+    background-color: #dbedff;
+    color: #337dbc;
+
+    > .fileIcon {
+      width: 49px;
+    }
+
+    > .fileName {
+      width: 240px;
+      font-size: 16px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      .hiddenEllipsis();
+    }
+
+    > .download {
+      width: 49px;
+      height: 49px;
+      text-align: center;
+      float: right;
+      .pointer();
+    }
+
+    > .downloadIcon {
+      width: 49px;
+      height: 49px;
+      line-height: 49px;
+      .pointer();
+    }
+  }
+}

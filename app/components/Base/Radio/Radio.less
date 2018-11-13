@@ -1,0 +1,51 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+@prefix-cls: ~'ant-radio';
+
+.stylefn(@type: primary, @color) {
+  .@{prefix-cls} {
+    &-@{type} {
+      .@{prefix-cls}-checked {
+        .@{prefix-cls}-inner {
+          border-color: @color;
+          &::after {
+            background-color: @color;
+          }
+        }
+        &::after {
+          border: none;
+        }
+      }
+      &:hover {
+        .@{prefix-cls} .@{prefix-cls}-inner {
+          border-color: @color;
+        }
+      }
+    }
+  }
+}
+
+:global {
+  .@{prefix-cls} {
+    &-wrapper {
+      font-size: 15px;
+    }
+    &-inner {
+      .transition(all, 0.15s);
+    }
+    &-checked .@{prefix-cls}-inner {
+      &::after {
+        left: 1px;
+        top: 1px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  .stylefn(danger, @danger-color);
+  .stylefn(warning, @warning-color);
+  .stylefn(success, @success-color);
+  .stylefn(ink, @ink-color);
+  .stylefn(dark, #999);
+}

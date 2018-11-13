@@ -1,0 +1,50 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+@prefix-cls: ~'ant-checkbox';
+
+.stylefn(@type: primary, @color) {
+  .@{prefix-cls} {
+    &-@{type} {
+      .@{prefix-cls}-checked,
+      .@{prefix-cls}-indeterminate {
+        .@{prefix-cls}-inner {
+          background-color: @color;
+          border-color: @color;
+        }
+        &::after {
+          border: none;
+        }
+      }
+
+      &:hover .@{prefix-cls}-inner,
+      .@{prefix-cls}:hover .@{prefix-cls}-inner,
+      .@{prefix-cls}-input:focus + .@{prefix-cls}-inner {
+        border-color: @color;
+      }
+    }
+  }
+}
+
+:global {
+  .@{prefix-cls} {
+    &-inner {
+      .transition(all, 0.15s);
+    }
+    &-wrapper {
+      font-size: 15px;
+    }
+  }
+  .@{prefix-cls}-indeterminate {
+    .@{prefix-cls}-inner {
+      &::after {
+        height: 2.428571px;
+      }
+    }
+  }
+  .stylefn(danger, @danger-color);
+  .stylefn(warning, @warning-color);
+  .stylefn(success, @success-color);
+  .stylefn(ink, @ink-color);
+  .stylefn(dark, #999);
+}

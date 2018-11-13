@@ -1,0 +1,51 @@
+@import '~assets/css/variables.less';
+
+@prefix-cls: ~'ant-tag';
+
+.stylefn(@type: primary, @color, @color-light) {
+  .@{prefix-cls} {
+    &-@{type} {
+      background-color: @color-light;
+      color: @color;
+      border-color: @color-light;
+      .anticon-cross {
+        color: @color;
+        &:hover {
+          color: lighten(@color, 5%);
+        }
+      }
+    }
+    &-checkable-@{type} {
+      background-color: @color-light;
+      color: @color;
+      &.@{prefix-cls}-checkable-checked {
+        color: @white;
+        background-color: @color;
+      }
+      &:not(.@{prefix-cls}-checkable-checked):hover {
+        color: @color;
+      }
+      &:active {
+        color: @white!important;
+        background-color: darken(@color, 5%);
+      }
+    }
+  }
+}
+
+:global {
+  .@{prefix-cls} {
+    height: 24px;
+    line-height: 20px;
+    font-size: 13px;
+    .anticon-cross {
+      vertical-align: middle;
+    }
+  }
+  .stylefn(primary, @primary-color, @primary-color-light);
+  .stylefn(danger, @danger-color, @danger-color-light);
+  .stylefn(warning, @warning-color, @warning-color-light);
+  .stylefn(success, @success-color, @success-color-light);
+  .stylefn(ink, @ink-color, @ink-color-light);
+  .stylefn(_silver, #999, @silver-color);
+}

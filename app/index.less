@@ -1,0 +1,35 @@
+/*
+  note：此文件用来引用全局样式，不支持css module
+*/
+
+@import '~antd/dist/antd.less';
+@import '~assets/css/theme.less';
+@import '~assets/css/variables.less';
+@import '~assets/css/reset.less';
+@import (less) './assets/uuicon/css/uuicon.css';
+
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: PingFangSC-Regular;
+  min-width: 1200px;
+}
+
+// 设置页面主标题
+.global-setting-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: @dark-color;
+}
+
+.ant-spin-container {
+  overflow: visible !important;
+}
+
+.global-spin {
+  width: 100%;
+  margin: 40px 0 !important;
+}

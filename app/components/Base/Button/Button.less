@@ -1,0 +1,247 @@
+@import '~assets/css/variables.less';
+
+@prefix-cls: ~'ant-btn';
+
+:global {
+  .@{prefix-cls} {
+    transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &:not(&-circle):not(&-circle-outline).@{prefix-cls}-icon-only {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    // 100%自适应显示
+    &-block {
+      width: 100%;
+    }
+    // 点击样式
+    &-clicked {
+      &:after {
+        display: none;
+      }
+    }
+    &:focus,
+    &:hover {
+      color: #fff;
+      color: lighten(@primary-color, 5%);
+      border-color: lighten(@primary-color, 5%);
+    }
+    &:active,
+    &.active {
+      color: darken(@primary-color, 5%);
+      border-color: darken(@primary-color, 5%);
+    }
+    &:disabled, &:disabled:hover {
+      background-color: #d8d8d8;
+      color: @white;
+    }
+    // primary
+    &-primary {
+      color: #fff;
+      background-color: @primary-color;
+      border-color: @primary-color;
+      &:focus,
+      &:hover {
+        color: #fff;
+        background-color: lighten(@primary-color, 5%);
+        border-color: lighten(@primary-color, 5%);
+      }
+      &:active,
+      &.active {
+        color: #fff;
+        background-color: darken(@primary-color, 5%);
+        border-color: darken(@primary-color, 5%);
+      }
+      &.@{prefix-cls}-background-ghost {
+        color: @primary-color;
+      }
+      &-light {
+        color: @primary-color;
+        background-color: @primary-color-light;
+        border-color: @primary-color-light;
+        &:focus,
+        &:hover {
+          color: @primary-color;
+          background-color: lighten(@primary-color-light, 1.5%);
+          border-color: lighten(@primary-color-light, 1.5%);
+        }
+        &:active,
+        &.active {
+          color: @primary-color;
+          background-color: darken(@primary-color-light, 1.5%);
+          border-color: darken(@primary-color-light, 1.5%);
+        }
+      }
+    }
+    // danger
+    &-danger {
+      color: #fff;
+      background-color: @danger-color;
+      border-color: @danger-color;
+      &:focus,
+      &:hover {
+        color: #fff;
+        background-color: lighten(@danger-color, 5%);
+        border-color: lighten(@danger-color, 5%);
+      }
+      &:active,
+      &.active {
+        color: #fff;
+        background-color: darken(@danger-color, 5%);
+        border-color: darken(@danger-color, 5%);
+      }
+      &.@{prefix-cls}-background-ghost {
+        color: @danger-color;
+      }
+      &-light {
+        color: @danger-color;
+        background-color: @danger-color-light;
+        border-color: @danger-color-light;
+        &:focus,
+        &:hover {
+          color: @danger-color;
+          background-color: lighten(@danger-color-light, 1.5%);
+          border-color: lighten(@danger-color-light, 1.5%);
+        }
+        &:active,
+        &.active {
+          color: @danger-color;
+          background-color: darken(@danger-color-light, 1.5%);
+          border-color: darken(@danger-color-light, 1.5%);
+        }
+        &.@{prefix-cls}-clicked:after {
+          border-color: @danger-color;
+        }
+      }
+    }
+    // warning
+    &-warning {
+      color: #fff;
+      background-color: @warning-color;
+      border-color: @warning-color;
+      &:focus,
+      &:hover {
+        color: #fff;
+        background-color: lighten(@warning-color, 5%);
+        border-color: lighten(@warning-color, 5%);
+      }
+      &:active,
+      &.active {
+        color: #fff;
+        background-color: darken(@warning-color, 5%);
+        border-color: darken(@warning-color, 5%);
+      }
+      &.@{prefix-cls}-clicked:after {
+        border-color: @warning-color;
+      }
+      &.@{prefix-cls}-background-ghost {
+        color: @warning-color;
+      }
+      &-light {
+        color: @warning-color;
+        background-color: @warning-color-light;
+        border-color: @warning-color-light;
+        &:focus,
+        &:hover {
+          color: @warning-color;
+          background-color: lighten(@warning-color-light, 1.5%);
+          border-color: lighten(@warning-color-light, 1.5%);
+        }
+        &:active,
+        &.active {
+          color: @warning-color;
+          background-color: darken(@warning-color-light, 1.5%);
+          border-color: darken(@warning-color-light, 1.5%);
+        }
+        &.@{prefix-cls}-clicked:after {
+          border-color: @warning-color;
+        }
+      }
+    }
+    &-success {
+      color: #fff;
+      background-color: @success-color;
+      border-color: @success-color;
+      &:focus,
+      &:hover {
+        color: #fff;
+        background-color: lighten(@success-color, 5%);
+        border-color: lighten(@success-color, 5%);
+      }
+      &:active,
+      &.active {
+        color: #fff;
+        background-color: darken(@success-color, 5%);
+        border-color: darken(@success-color, 5%);
+      }
+      &.@{prefix-cls}-clicked:after {
+        border-color: @success-color;
+      }
+      &.@{prefix-cls}-background-ghost {
+        color: @success-color;
+      }
+      &-light {
+        color: @success-color;
+        background-color: @success-color-light;
+        border-color: @success-color-light;
+        &:focus,
+        &:hover {
+          color: @success-color;
+          background-color: lighten(@success-color-light, 1.5%);
+          border-color: lighten(@success-color-light, 1.5%);
+        }
+        &:active,
+        &.active {
+          color: @success-color;
+          background-color: darken(@success-color-light, 1.5%);
+          border-color: darken(@success-color-light, 1.5%);
+        }
+        &.@{prefix-cls}-clicked:after {
+          border-color: @success-color;
+        }
+      }
+    }
+    &-ink {
+      color: #fff;
+      background-color: @ink-color;
+      border-color: @ink-color;
+      &:focus,
+      &:hover {
+        color: #fff;
+        background-color: lighten(@ink-color, 5%);
+        border-color: lighten(@ink-color, 5%);
+      }
+      &:active,
+      &.active {
+        color: #fff;
+        background-color: darken(@ink-color, 5%);
+        border-color: darken(@ink-color, 5%);
+      }
+      &.@{prefix-cls}-clicked:after {
+        border-color: @ink-color;
+      }
+      &.@{prefix-cls}-background-ghost {
+        color: @ink-color;
+      }
+      &-light {
+        color: @ink-color;
+        background-color: @ink-color-light;
+        border-color: @ink-color-light;
+        &:focus,
+        &:hover {
+          color: @ink-color;
+          background-color: lighten(@ink-color-light, 1.5%);
+          border-color: lighten(@ink-color-light, 1.5%);
+        }
+        &:active,
+        &.active {
+          color: @ink-color;
+          background-color: darken(@ink-color-light, 1.5%);
+          border-color: darken(@ink-color-light, 1.5%);
+        }
+        &.@{prefix-cls}-clicked:after {
+          border-color: @ink-color;
+        }
+      }
+    }
+  }
+}

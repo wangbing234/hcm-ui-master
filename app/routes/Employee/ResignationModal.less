@@ -1,0 +1,108 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+.headerWrapper {
+  display: flex;
+  position: relative;
+}
+
+.header {
+  font-weight: 500;
+  font-size: 20px;
+  color: @primary-color;
+}
+
+.messageWrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.message {
+  text-align: center;
+}
+
+.fileInput {
+  .pointer();
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+.fileButtonName {
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.fileTips {
+  font-size: 13px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: @primary-color;
+  margin-left: 4px;
+}
+
+.uploadWrapper {
+  position: relative;
+}
+
+.attachment {
+  width: 100%;
+  height: 49px;
+  // margin-bottom: 10px;
+  line-height: 49px;
+  border-radius: 4px;
+  background-color: @primary-color-light;
+  color: @primary-color;
+
+  > .fileIcon {
+    width: 49px;
+    font-size: 16px;
+  }
+
+  > .fileName {
+    width: 240px;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    .hiddenEllipsis();
+  }
+
+  > .delete {
+    width: 49px;
+    height: 49px;
+    text-align: center;
+    float: right;
+    .pointer();
+  }
+
+  > .deleteIcon {
+    width: 49px;
+    height: 49px;
+    line-height: 49px;
+    .pointer();
+  }
+}
+
+.popover {
+  position: absolute;
+  float: left;
+  left: 310px;
+  top: 0;
+  font-weight: 500;
+  z-index: 10;
+}

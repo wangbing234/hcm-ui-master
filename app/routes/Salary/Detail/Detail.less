@@ -1,0 +1,87 @@
+.header {
+  padding: 20px;
+  display: flex;
+  flex: none;
+
+  .avatarWrapper {
+    width:75px;
+    height:100px;
+  }
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  color: #666;
+}
+
+.headerInfo1 {
+  color: #333;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+.headerInfo2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.headerInfo3 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.headerInfo4 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+
+  &>span {
+    margin-right: 10px;
+  }
+}
+
+.history {
+  & .historyHeader {
+    color: #333;
+    line-height: 22px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  & .historyList {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    list-style-type: none;
+    padding-inline-start: 0;
+  }
+  & .historyItem {
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 10px;
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 10px;
+
+    & .itemHeader {
+      display: flex;
+      justify-content: space-between;
+      line-height: 20px;
+      margin-bottom: 10px;
+    }
+
+    & .itemTitle {
+      font-weight: 500;
+      color: #333;
+      font-size: 14px;
+    }
+
+  }
+}

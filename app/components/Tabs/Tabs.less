@@ -1,0 +1,25 @@
+.tabs {
+  margin-bottom: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start: 0;
+  list-style-type: none;
+
+  display: flex;
+  flex: none;
+  height: 46px;
+  border-bottom: 4px solid #f3f3f3;
+  padding: 0 20px;
+  & .tab {
+    margin-right: 30px;
+    height: 46px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #999;
+    line-height: 46px;
+    &.active {
+      color: #333;
+      border-bottom: 4px solid #50c286;
+    }
+  }
+}

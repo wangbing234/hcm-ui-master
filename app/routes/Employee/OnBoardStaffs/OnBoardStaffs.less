@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  padding: 20px;
+  background-color: #fff;
+  align-items: center;
+  flex: none;
+
+  & .name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-right: 40px;
+  }
+
+  & .filterBar {
+    display: flex;
+    flex: 1;
+  }
+
+  & .filter {
+    width: 120px;
+    margin-right: 10px;
+    font-size: 13px;
+
+    :global(.ant-select-selection) {
+      background-color: transparent;
+    }
+  }
+
+  & .keyword {
+    width: 180px;
+    font-size: 13px;
+    :global(.ant-input) {
+      background-color: transparent;
+    }
+  }
+}

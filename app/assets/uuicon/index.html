@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta nginx="Content-Type" charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>UUIcōn</title>
+	<link rel="stylesheet" type="text/css" href="css/uuicon.css" />
+	<link rel="apple-touch-icon-precomposed" href="css/ios.png" />
+
+	<style media="screen">
+		@charset "utf-8";
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background-color: #f1f1f1;
+			-webkit-font-smoothing: antialiased;
+			font-family: sans-serif;
+			font-weight: 500;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4 {
+			font-weight: 900;
+		}
+
+		p {
+			font-size: 14px;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		p {
+			line-height: 1.6;
+			color: #fff;
+		}
+
+		a {
+			text-decoration: none;
+			line-height: 1.6;
+			color: #fff;
+		}
+
+		i {
+			background-color: rgba(255, 255, 255, .2);
+			color: #fff;
+			display: flex;
+			flex-wrap: wrap;
+			border-radius: 4px;
+			cursor: pointer;
+			width: calc(100%/4 - 10px);
+			font-size: 40px;
+			padding: 10px;
+			margin: 0 10px 10px 0;
+			transition: .3s;
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+		}
+
+		i:hover,
+		.btn:hover {
+			background-color: rgba(255, 255, 255, 1);
+			color: #333;
+			box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.15);
+			transform: scale(1.1) translate(0, -3px);
+			z-index: 999;
+		}
+
+		i::before {
+			line-height: 40px !important;
+			margin: 0 10px 0 0 !important;
+		}
+
+		i span {
+			font-family: sans-serif;
+			font-size: 13px;
+			line-height: 20px;
+			display: inline-block;
+			font-style: normal;
+			font-weight: 600;
+		}
+
+		#nav {
+			box-shadow: inset 0 -5px 0 0 rgba(255, 255, 255, .1);
+		}
+
+
+		#nav li {
+			text-decoration: none;
+			color: #fff;
+			display: inline-block;
+			cursor: pointer;
+			font-weight: 900;
+			margin: 0 20px 0 0;
+		}
+
+		#nav li a {
+			opacity: .5;
+			display: inline-block;
+			padding-bottom: 20px;
+			padding-top: 20px;
+		}
+
+		.selected {
+			opacity: 1 !important;
+			color: #fff;
+			padding-bottom: 20px;
+			padding-top: 20px;
+			box-shadow: inset 0 -5px 0 0 #FFBF4C;
+		}
+
+		.big-title {
+			font-size: 80px;
+			margin: 40px 0 0 0;
+		}
+
+		.describe {
+			margin: 10px 0 70px 0;
+			font-size: 16px;
+		}
+
+		.bg {
+			background-image: url("http://ot9pp8nw5.bkt.clouddn.com/bgbgbbg.jpg");
+			background-size: cover;
+			background-position: 50% 50%;
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			z-index: -999;
+		}
+
+		.content {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		.box {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			margin-right: -10px;
+		}
+
+		.btn {
+			height: 50px;
+			padding: 0 20px 0 20px;
+			line-height: 50px;
+			font-size: 18px;
+			font-weight: 600;
+			background: rgba(255, 255, 255, .2);
+			color: #fff;
+			display: inline-block;
+			transition: .3s;
+			border-radius: 4px;
+		}
+
+		.header {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 40px;
+			height: 100vh;
+		}
+
+		.space {
+			padding: 40px;
+		}
+
+		.head {
+			width: 100%;
+			height: 504px;
+		}
+
+		.flow-down {
+			position: relative;
+			float: right;
+			width: 3px;
+			height: 100%;
+			background-color: rgba(255, 255, 255, 0.1);
+		}
+
+		#menu_con {
+			padding-top: 20px;
+		}
+
+		.flow-flow {
+			background-image: linear-gradient(0deg, #FFF 0%, rgba(255, 255, 255, 0) 100%);
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			bottom: 0;
+			animation-play-state: running;
+			animation-name: move-down;
+			animation-duration: 2s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite
+		}
+
+
+		@keyframes move-down {
+			0% {
+				height: 50%;
+				bottom: 50%;
+			}
+			25% {
+				height: 20%;
+				bottom: 20%;
+			}
+			50% {
+				height: 0;
+				bottom: 0;
+			}
+			100% {
+				height: 0;
+				bottom: 0;
+			}
+		}
+
+		.logo {
+			margin-bottom: 10px;
+		}
+
+		.codesOn .i-name {
+			display: none;
+		}
+
+		.codesOn .i-code {
+			display: inline;
+		}
+
+		.i-code {
+			display: none;
+		}
+
+		.switch {
+			display: inline-block;
+			padding: 20px 0 20px 0;
+			color: #fff;
+			font-size: 14px;
+			margin-bottom: -20px;
+		}
+
+		.switch input {
+			margin-right: 10px;
+		}
+
+		.font-title {
+			margin: 60px 0 20px 0;
+		}
+
+
+		@supports (-webkit-backdrop-filter: none) {
+			.btn {
+				background: rgba(255, 255, 255, .2);
+				-webkit-backdrop-filter: blur(20px);
+			}
+			i {
+				background: rgba(255, 255, 255, .2);
+				-webkit-backdrop-filter: blur(20px);
+			}
+		}
+
+		@media screen and (max-width:767px) {
+			.big-title {
+				font-size: 48px;
+				margin: 20px 0 0 0;
+			}
+			.describe {
+				font-size: 14px;
+			}
+			.space {
+				padding: 20px;
+			}
+			.header {
+				padding: 20px;
+				height: 100vh;
+			}
+			.head {
+				height: 240px;
+			}
+			.btn {
+				display: none;
+			}
+			.flow-down {
+				display: none;
+			}
+			.font-title {
+				font-size: 20px;
+			}
+			i {
+				width: calc(100%/2 - 10px);
+				font-size: 30px;
+				padding: 10px;
+				margin: 0 10px 10px 0;
+				transition: .3s;
+				box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+			}
+			i::before {
+				line-height: 60px !important;
+				margin: 0 0 0 0 !important;
+				width: 100% !important;
+			}
+
+			i span {
+				font-family: sans-serif;
+				font-size: 13px;
+				line-height: 20px;
+				display: inline-block;
+				font-style: normal;
+				font-weight: 600;
+				text-align: center;
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<div class="bg">
+	</div>
+
+
+	<div class="content">
+		<div class="header">
+			<div class="head">
+				<div class="flow-down">
+					<div class="flow-flow">
+					</div>
+				</div>
+				<div class="logo">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="52px" height="14px" viewBox="0 0 52 14" style="enable-background:new 0 0 52 14;"
+					  xml:space="preserve">
+							<style type="text/css">
+								.st0{fill:#FFFFFF;}
+							</style>
+							<defs>
+							</defs>
+							<g>
+								<path class="st0" d="M48.8620682,4.1880236H52V1.7948711h-3.1379318V0h-2.8390808v9.2136774
+									c0,1.9508524,1.1666298,3.627902,2.8390808,4.3733912C49.4558029,13.8517237,50.1127129,14,50.8045883,14h0.0000076h0.0000114H52
+									v-0.1507959v-2.3380938h-1.1954041c-1.0728264,0-1.9425278-0.8705416-1.9425278-1.9444437V4.1880236z"/>
+								<rect x="19.9482765" y="11.3675261" class="st0" width="2.3908045" height="2.3931615"/>
+								<path class="st0" d="M5.0804596,0H0v2.3931615h1.1954023v8.9743643H0v2.3931618h5.0804596
+									c1.9103894,0,3.5991211-0.945364,4.6283169-2.3931618c0.6602564-0.9288034,1.0498438-2.063817,1.0498438-3.290597V5.6837583
+									c0-1.2267799-0.3895874-2.3617933-1.0498438-3.2905967C8.6795807,0.9453546,6.990849,0,5.0804596,0z M7.9195404,8.2265015
+									c0,1.734746-1.4049025,3.1410246-3.1379313,3.1410246H4.034483V2.3931615h0.7471261
+									c1.7330289,0,3.1379313,1.4062781,3.1379313,3.1410062V8.2265015z"/>
+								<path class="st0" d="M19.9482765,1.7948803c-1.0553799,0-2.0245247,0.3802775-2.7643681,1.0215286
+									c-0.7811375,0.6770415-1.1954031,1.7482827-1.1954031,1.7482827V1.7948803h-4.034482v2.3931613h1.1954021v7.1794844h-1.1954021
+									v2.3931618h5.2298851v-2.3931618h-1.1954031V8.3760738c0-1.062984,0.4619379-2.0176592,1.1954031-2.6749425
+									c0.63451-0.5686388,1.4721355-0.9147992,2.3908043-0.9147992h0.3735638V1.7948803z"/>
+								<path class="st0" d="M30.567749,2.2463915c-0.7221813-0.4383744-1.569521-0.690833-2.4757957-0.690833h-0.0000076
+									c-1.8008022,0-3.3683987,0.9969164-4.1838989,2.4690523c-0.0297871,0.053771-0.0581245,0.108418-0.0858765,0.1634307
+									c-0.0078716,0.0156107-0.0161705,0.0309482-0.0238762,0.0466499c-0.312067,0.6359029-0.4879494,1.3508644-0.4879494,2.1071992
+									v2.8717866c0,0.7563343,0.1758823,1.4712963,0.4879494,2.1071987c0.0077057,0.0157022,0.0159969,0.0310392,0.0238762,0.0466499
+									c0.0277519,0.0550127,0.0560894,0.1096411,0.0858765,0.1634312C24.723547,13.0030928,26.2911434,14,28.0919456,14h0.0000076
+									c2.5200291,0,4.5832443-1.9518023,4.7668266-4.4273453h-2.8245983c-0.0032558,1.0710907-0.8714161,1.9384737-1.9422283,1.9384737
+									c-1.0728264,0-1.9425278-0.8705597-1.9425278-1.9444437V5.9888835c0-1.0738845,0.8697014-1.9444437,1.9425278-1.9444437
+									c1.0708122,0,1.9389725,0.867382,1.9422283,1.9384727h2.8393803V1.7948803h-2.2413788L30.567749,2.2463915z"/>
+								<path class="st0" d="M43.663475,5.2350497c0,0,0.0125046-2.6241846-2.6945534-3.4401693
+									c-0.4983177-0.1502117-1.0885124-0.2393217-1.7882042-0.2393217c-0.6182671,0-1.1596718,0.08911-1.6334915,0.2393217
+									c-0.21698,0.0687792-0.4184914,0.1513253-0.6078873,0.2431468c-2.0575447,0.9975369-2.5402298,3.1970227-2.5402298,3.1970227
+									h2.8017235c0,0,0.3092651-1.2863297,1.9201202-1.2863297c1.4899216,0,1.6833878,1.0437675,1.7034416,1.4365416v0.597651
+									c0,0-0.1757278,1.0000663-2.2974968,1.0000663c-0.5301819,0-1.0724678,0.0587735-1.5875587,0.1871119
+									c-1.541378,0.3840098-2.8390808,1.3911781-2.8390808,3.3126163c0,0.3109398,0.0325775,0.6053381,0.0895767,0.884819
+									c0.2329597,1.1422625,0.9300766,2.0000401,2.013504,2.3931618C36.6293678,13.9152813,37.1132431,14,37.6531944,14
+									c0.6364517,0,1.1929207-0.0912552,1.6786537-0.2393122c0.6026421-0.1836977,1.095417-0.455328,1.4925461-0.7526102v0.7526102
+									h4.0344849v-2.3931618H43.663475V5.2350497z M39.9519653,11.3872366c-0.2738419,0.1288815-0.6305771,0.2173014-1.0965385,0.2173014
+									c-0.4526062,0-0.847229-0.0738401-1.1599693-0.2173014c-0.472374-0.2166977-0.7561188-0.5938148-0.7561188-1.1277857
+									c0-0.887517,0.795433-1.3585787,2.3879204-1.3585787c1.0292702,0,1.4971352-0.4423027,1.4971352-0.4423027v1.9177094
+									C40.8243942,10.3762789,40.70121,11.0346107,39.9519653,11.3872366z"/>
+							</g>
+							</svg>
+				</div>
+				<p>2018 | The iconic font and CSS toolkit</p>
+				<h1 class="big-title">UUIcōn</h1>
+				<p class="describe">245个线性风格通用性icon<br/>请 ⌘+f 搜索关键词<br/>适应于 Web / App / 印刷，提供开源使用。</p>
+				<a href="http://p5gi5yyyf.bkt.clouddn.com/uuicon.zip"><div class="btn">
+					下载
+				</div></a>
+			</div>
+		</div>
+		<div class="space">
+			<div id="menu">
+
+				<ul id="nav">
+					<li><a class="selected">字体选择</a></li>
+					<li><a class="">更新日志</a></li>
+				</ul>
+
+				<div id="menu_con">
+					<script>
+					</script>
+
+					<div class="tag" style="display:block" id="icons">
+
+
+						<label class="switch">
+							<input type="checkbox" onclick="toggleCodes(this.checked)">显示码表
+						</label>
+
+						<h2 class="font-title">箭头/手势/表情/性别</h2>
+						<span class="box">
+
+						<i class="icon-back">
+						<span class="i-name">icon-back<br/>返回</span>
+						<span class="i-code">\e800</span>
+						</i>
+
+						<i class="icon-move">
+						<span class="i-name">icon-move<br/>推进</span>
+						<span class="i-code">\e837</span>
+						</i>
+
+						<i class="icon-left">
+						<span class="i-name">icon-left<br/>向左</span>
+						<span class="i-code">\e824</span>
+						</i>
+
+						<i class="icon-right">
+						<span class="i-name">icon-right<br/>向右</span>
+						<span class="i-code">\e85a</span>
+						</i>
+
+						<i class="icon-o-back">
+						<span class="i-name">icon-o-back<br/>圈返回</span>
+						<span class="i-code">\e8e4</span>
+						</i>
+
+						<i class="icon-i-back">
+						<span class="i-name">icon-i-back<br/>圈返回实心</span>
+						<span class="i-code">\e8e3</span>
+						</i>
+
+						<i class="icon-o-move">
+						<span class="i-name">icon-o-move<br/>圈推进</span>
+						<span class="i-code">\e8e1</span>
+						</i>
+
+						<i class="icon-i-move">
+						<span class="i-name">icon-i-move<br/>圈推进实心</span>
+						<span class="i-code">\e8e2</span>
+						</i>
+
+						<i class="icon-up">
+						<span class="i-name">icon-up<br/>向上</span>
+						<span class="i-code">\e861</span>
+						</i>
+
+						<i class="icon-down">
+						<span class="i-name">icon-down<br/>向下</span>
+						<span class="i-code">\e807</span>
+						</i>
+
+						<i class="icon-leftt">
+						<span class="i-name">icon-leftt<br/>向左带柄</span>
+						<span class="i-code">\e89b</span>
+						</i>
+
+						<i class="icon-rightt">
+						<span class="i-name">icon-rightt<br/>向右带柄</span>
+						<span class="i-code">\e89c</span>
+						</i>
+
+						<i class="icon-menu-up">
+						<span class="i-name">icon-menu-up<br/>上三角</span>
+						<span class="i-code">\e835</span>
+						</i>
+
+						<i class="icon-menu-down">
+						<span class="i-name">icon-menu-down<br/>下三角</span>
+						<span class="i-code">\e834</span>
+						</i>
+
+						<i class="icon-refresh">
+						<span class="i-name">icon-refresh<br/>单箭头刷新</span>
+						<span class="i-code">\e859</span>
+						</i>
+
+						<i class="icon-refresh2">
+						<span class="i-name">icon-refresh2<br/>双箭头刷新</span>
+						<span class="i-code">\e8af</span>
+						</i>
+
+						<i class="icon-o-left">
+						<span class="i-name">icon-o-left<br/>圈左</span>
+						<span class="i-code">\e841</span>
+						</i>
+
+						<i class="icon-o-right">
+						<span class="i-name">icon-o-right<br/>圈右</span>
+						<span class="i-code">\e84b</span>
+						</i>
+
+						<i class="icon-o-up">
+						<span class="i-name">icon-o-up<br/>圈上</span>
+						<span class="i-code">\e84d</span>
+						</i>
+
+						<i class="icon-o-down">
+						<span class="i-name">icon-o-down<br/>圈下</span>
+						<span class="i-code">\e83c</span>
+						</i>
+
+						<i class="icon-i-left">
+						<span class="i-name">icon-i-left<br/>实心左</span>
+						<span class="i-code">\e814</span>
+						</i>
+
+						<i class="icon-i-right">
+						<span class="i-name">icon-i-right<br/>实心右</span>
+						<span class="i-code">\e81d</span>
+						</i>
+
+						<i class="icon-i-up">
+						<span class="i-name">icon-i-up<br/>实心上</span>
+						<span class="i-code">\e81f</span>
+						</i>
+
+						<i class="icon-i-down">
+						<span class="i-name">icon-i-down<br/>实心下</span>
+						<span class="i-code">\e80f</span>
+						</i>
+
+						<i class="icon-hand-up">
+						<span class="i-name">icon-hand-up<br/>向上手势</span>
+						<span class="i-code">\e8c1</span>
+						</i>
+
+						<i class="icon-hand-below">
+						<span class="i-name">icon-hand-below<br/>向下手势</span>
+						<span class="i-code">\e8bc</span>
+						</i>
+
+						<i class="icon-hand-right">
+						<span class="i-name">icon-hand-right<br/>右手</span>
+						<span class="i-code">\e8c0</span>
+						</i>
+
+						<i class="icon-hand-left">
+						<span class="i-name">icon-hand-left<br/>左手</span>
+						<span class="i-code">\e8bd</span>
+						</i>
+
+						<i class="icon-hand-like">
+						<span class="i-name">icon-hand-like<br/>喜欢手势</span>
+						<span class="i-code">\e8be</span>
+						</i>
+
+						<i class="icon-hand-nolike">
+						<span class="i-name">icon-hand-nolike<br/>讨厌手势</span>
+						<span class="i-code">\e8bf</span>
+						</i>
+
+						<i class="icon-hand-yesno">
+						<span class="i-name">icon-hand-yesno<br/>喜欢与不喜欢</span>
+						<span class="i-code">\e88e</span>
+						</i>
+
+						<i class="icon-hand-victory">
+						<span class="i-name">icon-hand-victory<br/>胜利手势</span>
+						<span class="i-code">\e8bf</span>
+						</i>
+
+						<i class="icon-o-smile">
+						<span class="i-name">icon-o-smile<br/>微笑表情</span>
+						<span class="i-code">\e8dd</span>
+						</i>
+
+						<i class="icon-o-upset">
+						<span class="i-name">icon-o-upset<br/>心烦表情</span>
+						<span class="i-code">\e8de</span>
+						</i>
+
+						<i class="icon-i-smile">
+						<span class="i-name">icon-i-smile<br/>微笑表情2</span>
+						<span class="i-code">\e8a7</span>
+						</i>
+
+						<i class="icon-i-upset">
+						<span class="i-name">icon-i-upset<br/>心烦表情2</span>
+						<span class="i-code">\e8b2</span>
+						</i>
+
+						<i class="icon-mars">
+						<span class="i-name">icon-mars<br/>雄性/男</span>
+						<span class="i-code">\e831</span>
+						</i>
+
+						<i class="icon-venus">
+						<span class="i-name">icon-venus<br/>雌性/女</span>
+						<span class="i-code">\e863</span>
+						</i>
+
+						<i class="icon-gender">
+						<span class="i-name">icon-gender<br/>性别</span>
+						<span class="i-code">\e8d9</span>
+						</i>
+
+						<i class="icon-sorting">
+						<span class="i-name">icon-sorting<br/>上下排序</span>
+						<span class="i-code">\e889</span>
+						</i>
+						
+						<i class="icon-drag">
+						<span class="i-name">icon-drag<br/>拖动</span>
+						<span class="i-code">\e8ec</span>
+						</i>
+
+						</span>
+
+						<h2 class="font-title">操作/选择</h2>
+						<span class="box">
+
+						<i class="icon-download">
+						<span class="i-name">icon-download<br/>下载</span>
+						<span class="i-code">\e808</span>
+						</i>
+
+						<i class="icon-upload">
+						<span class="i-name">icon-upload<br/>上传</span>
+						<span class="i-code">\e862</span>
+						</i>
+
+						<i class="icon-class">
+						<span class="i-name">icon-class<br/>分类</span>
+						<span class="i-code">\e803</span>
+						</i>
+
+						<i class="icon-screen">
+						<span class="i-name">icon-screen<br/>列表</span>
+						<span class="i-code">\e85c</span>
+						</i>
+
+						<i class="icon-edit">
+						<span class="i-name">icon-edit<br/>编辑</span>
+						<span class="i-code">\e809</span>
+						</i>
+
+						<i class="icon-disable">
+						<span class="i-name">icon-disable<br/>禁用</span>
+						<span class="i-code">\e806</span>
+						</i>
+
+						<i class="icon-menu-1">
+						<span class="i-name">icon-menu-1<br/>汉堡菜单</span>
+						<span class="i-code">\e833</span>
+						</i>
+
+						<i class="icon-menu-0">
+						<span class="i-name">icon-menu-0<br/>汉堡菜单关闭</span>
+						<span class="i-code">\e832</span>
+						</i>
+
+						<i class="icon-plus">
+						<span class="i-name">icon-plus<br/>加</span>
+						<span class="i-code">\e857</span>
+						</i>
+
+						<i class="icon-exit">
+						<span class="i-name">icon-exit<br/>叉</span>
+						<span class="i-code">\e80a</span>
+						</i>
+
+						<i class="icon-o-plus">
+						<span class="i-name">icon-o-plus<br/>圈加</span>
+						<span class="i-code">\e849</span>
+						</i>
+
+						<i class="icon-i-plus">
+						<span class="i-name">icon-i-plus<br/>圈加实心</span>
+						<span class="i-code">\e81b</span>
+						</i>
+
+						<i class="icon-o-check">
+						<span class="i-name">icon-o-check<br/>圈勾</span>
+						<span class="i-code">\e83b</span>
+						</i>
+
+						<i class="icon-ii-1">
+						<span class="i-name">icon-ii-1<br/>多选勾</span>
+						<span class="i-code">\e8ac</span>
+						</i>
+
+						<i class="icon-ii-0">
+						<span class="i-name">icon-ii-0<br/>多选半选</span>
+						<span class="i-code">\e8ab</span>
+						</i>
+
+						<i class="icon-oo">
+						<span class="i-name">icon-oo<br/>多选空</span>
+						<span class="i-code">\e855</span>
+						</i>
+
+						<i class="icon-i-check">
+						<span class="i-name">icon-i-check<br/>圈勾实心</span>
+						<span class="i-code">\e80e</span>
+						</i>
+
+						<i class="icon-oo-1">
+						<span class="i-name">icon-oo-1<br/>多选勾实心</span>
+						<span class="i-code">\e853</span>
+						</i>
+
+						<i class="icon-oo-o">
+						<span class="i-name">icon-oo-o<br/>多选半选实心</span>
+						<span class="i-code">\e854</span>
+						</i>
+
+						<i class="icon-push">
+						<span class="i-name">icon-push<br/>推送提醒点</span>
+						<span class="i-code">\e866</span>
+						</i>
+
+						<i class="icon-o-exit">
+						<span class="i-name">icon-o-exit<br/>圈叉</span>
+						<span class="i-code">\e83d</span>
+						</i>
+
+						<i class="icon-i-exit">
+						<span class="i-name">icon-i-exit<br/>圈叉实心</span>
+						<span class="i-code">\e810</span>
+						</i>
+
+						<i class="icon-o">
+						<span class="i-name">icon-o<br/>单选空</span>
+						<span class="i-code">\e851</span>
+						</i>
+
+						<i class="icon-o-1">
+						<span class="i-name">icon-o-1<br/>单选实</span>
+						<span class="i-code">\e838</span>
+						</i>
+
+						<i class="icon-o-like">
+						<span class="i-name">icon-o-like<br/>爱心</span>
+						<span class="i-code">\e842</span>
+						</i>
+
+						<i class="icon-i-like">
+						<span class="i-name">icon-i-like<br/>爱心实心</span>
+						<span class="i-code">\e815</span>
+						</i>
+
+
+						<i class="icon-o-mark">
+						<span class="i-name">icon-o-mark<br/>马克标注</span>
+						<span class="i-code">\e818</span>
+						</i>
+
+						<i class="icon-i-mark">
+						<span class="i-name">icon-i-mark<br/>马克标注实心</span>
+						<span class="i-code">\e845</span>
+						</i>
+
+						<i class="icon-o-eye">
+						<span class="i-name">icon-o-eye<br/>可见</span>
+						<span class="i-code">\e83e</span>
+						</i>
+
+						<i class="icon-i-eye">
+						<span class="i-name">icon-i-eye<br/>可见实心</span>
+						<span class="i-code">\e811</span>
+						</i>
+
+						<i class="icon-o-noeye">
+						<span class="i-name">icon-o-noeye<br/>不可见</span>
+						<span class="i-code">\e846</span>
+						</i>
+
+						<i class="icon-i-noeye">
+						<span class="i-name">icon-i-noeye<br/>不可见实心</span>
+						<span class="i-code">\e819</span>
+						</i>
+
+						<i class="icon-o-favorites">
+						<span class="i-name">icon-o-favorites<br/>收藏</span>
+						<span class="i-code">\e83f</span>
+						</i>
+
+						<i class="icon-i-favorites">
+						<span class="i-name">icon-i-favorites<br/>收藏实心</span>
+						<span class="i-code">\e812</span>
+						</i>
+
+						<i class="icon-o-preferences">
+						<span class="i-name">icon-o-preferences<br/>设置</span>
+						<span class="i-code">\e84a</span>
+						</i>
+
+						<i class="icon-i-preferences">
+						<span class="i-name">icon-i-preferences<br/>设置实心</span>
+						<span class="i-code">\e81c</span>
+						</i>
+
+						<i class="icon-more">
+						<span class="i-name">icon-more<br/>更多点点点</span>
+						<span class="i-code">\e836</span>
+						</i>
+
+						<i class="icon-share">
+						<span class="i-name">icon-share<br/>转发分享</span>
+						<span class="i-code">\e85e</span>
+						</i>
+
+						<i class="icon-lock1">
+						<span class="i-name">icon-lock1<br/>锁定</span>
+						<span class="i-code">\e86a</span>
+						</i>
+
+						<i class="icon-lock2">
+						<span class="i-name">icon-lock2<br/>解锁</span>
+						<span class="i-code">\e86b</span>
+						</i>
+
+						<i class="icon-offf">
+						<span class="i-name">icon-offf<br/>开关/关</span>
+						<span class="i-code">\e8c8</span>
+						</i>
+
+						<i class="icon-onn">
+						<span class="i-name">icon-onn<br/>开关/开</span>
+						<span class="i-code">\e8c9</span>
+						</i>
+
+						<i class="icon-volume">
+						<span class="i-name">icon-volume<br/>有声</span>
+						<span class="i-code">\e8ca</span>
+						</i>
+
+						<i class="icon-mute">
+						<span class="i-name">icon-mute<br/>无声</span>
+						<span class="i-code">\e8cb</span>
+						</i>
+
+						<i class="icon-qr">
+						<span class="i-name">icon-qr<br/>二维码</span>
+						<span class="i-code">\e86c</span>
+						</i>
+
+						<i class="icon-scan">
+						<span class="i-name">icon-scan<br/>扫码</span>
+						<span class="i-code">\e86d</span>
+						</i>
+
+						<i class="icon-copy">
+						<span class="i-name">icon-copy<br/>拷贝</span>
+						<span class="i-code">\e880</span>
+						</i>
+
+						<i class="icon-shear">
+						<span class="i-name">icon-shear<br/>剪切</span>
+						<span class="i-code">\e8a8</span>
+						</i>
+
+						<i class="icon-cut">
+						<span class="i-name">icon-cut<br/>裁切</span>
+						<span class="i-code">\e870</span>
+						</i>
+
+						<i class="icon-filter">
+						<span class="i-name">icon-filter<br/>筛选</span>
+						<span class="i-code">\e88d</span>
+						</i>
+
+						<i class="icon-o-cursor">
+						<span class="i-name">icon-o-cursor<br/>鼠标光标</span>
+						<span class="i-code">\e887</span>
+						</i>
+
+						<i class="icon-i-cursor">
+						<span class="i-name">icon-i-cursor<br/>鼠标光标实心</span>
+						<span class="i-code">]\e885</span>
+						</i>
+
+						<i class="icon-tag">
+						<span class="i-name">icon-tag<br/>标签</span>
+						<span class="i-code">\e8d2</span>
+						</i>
+
+						<i class="icon-tag2">
+						<span class="i-name">icon-tag2<br/>标签实心</span>
+						<span class="i-code">\e8df</span>
+						</i>
+						
+						<i class="icon-text-m">
+						<span class="i-name">icon-text-m<br/>多行文本</span>
+						<span class="i-code">\e8ee</span>
+						</i>
+						
+						<i class="icon-text-s">
+						<span class="i-name">icon-text-s<br/>单行文本</span>
+						<span class="i-code">\e8f0</span>
+						</i>
+						
+						<i class="icon-text-num">
+						<span class="i-name">icon-text-num<br/>数字框</span>
+						<span class="i-code">\e8ef</span>
+						</i>
+						
+						<i class="icon-class-2">
+						<span class="i-name">icon-class-2<br/>分类实心</span>
+						<span class="i-code">\e65a</span>
+						</i>
+
+						</span>
+
+						<h2 class="font-title">信息/媒体</h2>
+						<span class="box">
+
+						<i class="icon-o-location">
+						<span class="i-name">icon-o-location<br/>定位</span>
+						<span class="i-code">\e843</span>
+						</i>
+
+						<i class="icon-o-mail">
+						<span class="i-name">icon-o-mail<br/>邮件信息</span>
+						<span class="i-code">\e844</span>
+						</i>
+
+						<i class="icon-o-chat">
+						<span class="i-name">icon-o-chat<br/>圆对话气泡</span>
+						<span class="i-code">\e839</span>
+						</i>
+
+						<i class="icon-o-chat2">
+						<span class="i-name">icon-o-chat2<br/>方对话气泡</span>
+						<span class="i-code">\e83a</span>
+						</i>
+
+						<i class="icon-i-location">
+						<span class="i-name">icon-i-location<br/>定位实心</span>
+						<span class="i-code">\e816</span>
+						</i>
+
+						<i class="icon-i-mail">
+						<span class="i-name">icon-o-mail<br/>邮件信息实心</span>
+						<span class="i-code">\e817</span>
+						</i>
+
+						<i class="icon-i-chat">
+						<span class="i-name">icon-i-chat<br/>圆对话气泡实心</span>
+						<span class="i-code">\e80c</span>
+						</i>
+
+						<i class="icon-i-chat2">
+						<span class="i-name">icon-i-chat2<br/>方对话气泡实心</span>
+						<span class="i-code">\e80d</span>
+						</i>
+
+						<i class="icon-o-notice">
+						<span class="i-name">icon-o-notice<br/>消息铃铛</span>
+						<span class="i-code">\e847</span>
+						</i>
+
+						<i class="icon-i-notice">
+						<span class="i-name">icon-i-notice<br/>消息铃铛实心</span>
+						<span class="i-code">\e81a</span>
+						</i>
+
+						<i class="icon-call">
+						<span class="i-name">icon-call<br/>电话</span>
+						<span class="i-code">\e802</span>
+						</i>
+
+						<i class="icon-code">
+						<span class="i-name">icon-code<br/>代码/html标签</span>
+						<span class="i-code">\e804</span>
+						</i>
+
+						<i class="icon-o-info">
+						<span class="i-name">icon-o-info<br/>信息</span>
+						<span class="i-code">\e840</span>
+						</i>
+
+						<i class="icon-i-info">
+						<span class="i-name">icon-i-info<br/>信息实心</span>
+						<span class="i-code">\e813</span>
+						</i>
+
+						<i class="icon-o-warning">
+						<span class="i-name">icon-o-warning<br/>警告</span>
+						<span class="i-code">\e850</span>
+						</i>
+
+						<i class="icon-i-warning">
+						<span class="i-name">icon-i-warning<br/>警告实心</span>
+						<span class="i-code">\e822</span>
+						</i>
+
+						<i class="icon-o-help">
+						<span class="i-name">icon-o-help<br/>帮助/问号</span>
+						<span class="i-code">\e882</span>
+						</i>
+
+						<i class="icon-i-help">
+						<span class="i-name">icon-i-help<br/>帮助/问号实心</span>
+						<span class="i-code">\e883</span>
+						</i>
+
+						<i class="icon-chatt">
+						<span class="i-name">icon-chatt<br/>对话</span>
+						<span class="i-code">\e878</span>
+						</i>
+
+						<i class="icon-service">
+						<span class="i-name">icon-service<br/>客服</span>
+						<span class="i-code">\e8da</span>
+						</i>
+
+						<i class="icon-o-inbox">
+						<span class="i-name">icon-o-inbox<br/>收件箱</span>
+						<span class="i-code">\e895</span>
+						</i>
+
+						<i class="icon-i-inbox">
+						<span class="i-name">icon-i-inbox<br/>收件箱实心</span>
+						<span class="i-code">\e891</span>
+						</i>
+
+						<i class="icon-o-pause">
+						<span class="i-name">icon-o-pause<br/>圈暂停</span>
+						<span class="i-code">\e8a0</span>
+						</i>
+
+						<i class="icon-o-play">
+						<span class="i-name">icon-o-play<br/>圈播放</span>
+						<span class="i-code">\e8a1</span>
+						</i>
+
+						<i class="icon-stop">
+						<span class="i-name">icon-stop<br/>停止</span>
+						<span class="i-code">\e8a3</span>
+						</i>
+
+						<i class="icon-pause">
+						<span class="i-name">icon-pause<br/>暂停</span>
+						<span class="i-code">\e8a4</span>
+						</i>
+
+						<i class="icon-play-icon">
+						<span class="i-name">icon-play-icon<br/>暂停播放切换</span>
+						<span class="i-code">\e8a5</span>
+						</i>
+
+						<i class="icon-play-left-l">
+						<span class="i-name">icon-play-left-l<br/>上一首</span>
+						<span class="i-code">\e8a6</span>
+						</i>
+
+						<i class="icon-play-left">
+						<span class="i-name">icon-play-left<br/>快退</span>
+						<span class="i-code">\e8a7</span>
+						</i>
+
+						<i class="icon-play-right-r">
+						<span class="i-name">icon-play-right-r<br/>下一首</span>
+						<span class="i-code">\e8a8</span>
+						</i>
+
+						<i class="icon-play-right">
+						<span class="i-name">icon-play-right<br/>快进</span>
+						<span class="i-code">\e8a9</span>
+						</i>
+
+						<i class="icon-play">
+						<span class="i-name">icon-play<br/>播放</span>
+						<span class="i-code">\e8aa</span>
+						</i>
+
+						<i class="icon-music">
+						<span class="i-name">icon-music<br/>音乐</span>
+						<span class="i-code">\e8bb</span>
+						</i>
+
+						<i class="icon-earth">
+						<span class="i-name">icon-earth<br/>地球</span>
+						<span class="i-code">\e858</span>
+						</i>
+
+						</span>
+
+						<h2 class="font-title">设备/事物</h2>
+						<span class="box">
+
+						<i class="icon-calendar">
+						<span class="i-name">icon-calendar<br/>日历</span>
+						<span class="i-code">\e801</span>
+						</i>
+
+						<i class="icon-calendar2">
+						<span class="i-name">icon-calendar2<br/>日历2</span>
+						<span class="i-code">\e873</span>
+						</i>
+						
+						<i class="icon-co-o">
+						<span class="i-name">icon-co-o<br/>公司</span>
+						<span class="i-code">\e8e7</span>
+						</i>
+						
+						<i class="icon-co-i">
+						<span class="i-name">icon-co-i<br/>公司实心</span>
+						<span class="i-code">\e8e6</span>
+						</i>
+
+						<i class="icon-contact">
+						<span class="i-name">icon-contact<br/>联系人</span>
+						<span class="i-code">\e805</span>
+						</i>
+
+						<i class="icon-identity">
+						<span class="i-name">icon-identity<br/>名片</span>
+						<span class="i-code">\e823</span>
+						</i>
+
+						<i class="icon-home">
+						<span class="i-name">icon-home<br/>首页/房屋</span>
+						<span class="i-code">\e80b</span>
+						</i>
+
+						<i class="icon-home2">
+						<span class="i-name">icon-home2<br/>首页/房屋2</span>
+						<span class="i-code">\e899</span>
+						</i>
+
+						<i class="icon-preferences">
+						<span class="i-name">icon-preferences<br/>齿轮设置</span>
+						<span class="i-code">\e888</span>
+						</i>
+
+						<i class="icon-settings">
+						<span class="i-name">icon-settings<br/>拉杆设置</span>
+						<span class="i-code">\e8c7</span>
+						</i>
+
+						<i class="icon-o-trash">
+						<span class="i-name">icon-o-trash<br/>垃圾桶</span>
+						<span class="i-code">\e84c</span>
+						</i>
+
+						<i class="icon-i-trash">
+						<span class="i-name">icon-i-trash<br/>垃圾桶实心</span>
+						<span class="i-code">\e81e</span>
+						</i>
+
+						<i class="icon-link">
+						<span class="i-name">icon-link<br/>链接锁链</span>
+						<span class="i-code">\e825</span>
+						</i>
+
+						<i class="icon-paper-clip">
+						<span class="i-name">icon-paper-clip<br/>附件别针</span>
+						<span class="i-code">\e8d3</span>
+						</i>
+
+						<i class="icon-o-folder">
+						<span class="i-name">icon-o-folder<br/>文件夹</span>
+						<span class="i-code">\e87e</span>
+						</i>
+
+						<i class="icon-i-folder">
+						<span class="i-name">icon-i-folder<br/>文件夹实心</span>
+						<span class="i-code">\e872</span>
+						</i>
+
+						<i class="icon-o-file">
+						<span class="i-name">icon-o-file<br/>文件</span>
+						<span class="i-code">\e89f</span>
+						</i>
+
+						<i class="icon-i-file">
+						<span class="i-name">icon-i-file<br/>文件实心</span>
+						<span class="i-code">\e89d</span>
+						</i>
+
+						<i class="icon-o-cloud">
+						<span class="i-name">icon-o-cloud<br/>云端</span>
+						<span class="i-code">\e87d</span>
+						</i>
+
+						<i class="icon-i-cloud">
+						<span class="i-name">icon-i-cloud<br/>云端实心</span>
+						<span class="i-code">\e871</span>
+						</i>
+
+						<i class="icon-o-photo">
+						<span class="i-name">icon-o-photo<br/>图片上传相机</span>
+						<span class="i-code">\e848</span>
+						</i>
+
+						<i class="icon-offer">
+						<span class="i-name">icon-offer<br/>offer/折角纸张</span>
+						<span class="i-code">\e852</span>
+						</i>
+
+						<i class="icon-text">
+						<span class="i-name">icon-text<br/>文本单页</span>
+						<span class="i-code">\e85f</span>
+						</i>
+
+						<i class="icon-text2">
+						<span class="i-name">icon-text2<br/>文本长页</span>
+						<span class="i-code">\e86e</span>
+						</i>
+
+						<i class="icon-worko">
+						<span class="i-name">icon-worko<br/>工作/公文包</span>
+						<span class="i-code">\e8a0</span>
+						</i>
+
+						<i class="icon-work">
+						<span class="i-name">icon-work<br/>工作/公文包实心</span>
+						<span class="i-code">\e864</span>
+						</i>
+
+						<i class="icon-search">
+						<span class="i-name">icon-search<br/>搜索/放大镜</span>
+						<span class="i-code">\e85d</span>
+						</i>
+
+						<i class="icon-school">
+						<span class="i-name">icon-school<br/>学校</span>
+						<span class="i-code">\e85b</span>
+						</i>
+
+						<i class="icon-phone">
+						<span class="i-name">icon-phone<br/>手机/移动电话</span>
+						<span class="i-code">\e856</span>
+						</i>
+
+						<i class="icon-time">
+						<span class="i-name">icon-time<br/>时间/钟表</span>
+						<span class="i-code">\e860</span>
+						</i>
+
+						<i class="icon-crown">
+						<span class="i-name">icon-crown<br/>会员/王官</span>
+						<span class="i-code">\e865</span>
+						</i>
+
+						<i class="icon-flash">
+						<span class="i-name">icon-flash<br/>闪电/迅速</span>
+						<span class="i-code">\e867</span>
+						</i>
+
+						<i class="icon-gift">
+						<span class="i-name">icon-gift<br/>礼品/礼物</span>
+						<span class="i-code">\e868</span>
+						</i>
+
+						<i class="icon-imgicon">
+						<span class="i-name">icon-imgicon<br/>图片</span>
+						<span class="i-code">\e869</span>
+						</i>
+
+						<i class="icon-level">
+						<span class="i-name">icon-level<br/>阶梯</span>
+						<span class="i-code">\e874</span>
+						</i>
+
+						<i class="icon-level2">
+						<span class="i-name">icon-level2<br/>阶梯粗</span>
+						<span class="i-code">\e89a</span>
+						</i>
+
+						<i class="icon-dashboard">
+						<span class="i-name">icon-dashboard<br/>仪表盘</span>
+						<span class="i-code">\e87c</span>
+						</i>
+
+						<i class="icon-task">
+						<span class="i-name">icon-task<br/>任务夹</span>
+						<span class="i-code">\e88a</span>
+						</i>
+
+						<i class="icon-o-branch">
+						<span class="i-name">icon-o-branch<br/>组织架构</span>
+						<span class="i-code">\e886</span>
+						</i>
+
+						<i class="icon-i-branch">
+						<span class="i-name">icon-i-branch<br/>组织架构实心</span>
+						<span class="i-code">\e87f</span>
+						</i>
+
+						<i class="icon-moneyo">
+						<span class="i-name">icon-moneyo<br/>钱包</span>
+						<span class="i-code">\e89e</span>
+						</i>
+
+						<i class="icon-money">
+						<span class="i-name">icon-money<br/>钱包实心</span>
+						<span class="i-code">\e86f</span>
+						</i>
+
+						<i class="icon-wave">
+						<span class="i-name">icon-wave<br/>心跳</span>
+						<span class="i-code">\e898</span>
+						</i>
+
+						<i class="icon-send">
+						<span class="i-name">icon-send<br/>小飞机/发送</span>
+						<span class="i-code">\e897</span>
+						</i>
+
+						<i class="icon-check">
+						<span class="i-name">icon-check<br/>对勾</span>
+						<span class="i-code">\e8a5</span>
+						</i>
+
+						<i class="icon-window">
+						<span class="i-name">icon-window<br/>窗口</span>
+						<span class="i-code">\e8a6</span>
+						</i>
+
+						<i class="icon-wifi">
+						<span class="i-name">icon-wifi<br/>wifi/无线网</span>
+						<span class="i-code">\e8a9</span>
+						</i>
+
+						<i class="icon-fenghuolun">
+						<span class="i-name">icon-fenghuoluni<br/>风火轮/等待</span>
+						<span class="i-code">\e8aa</span>
+						</i>
+
+						<i class="icon-display">
+						<span class="i-name">icon-display<br/>显示器/桌面</span>
+						<span class="i-code">\e8ad</span>
+						</i>
+
+						<i class="icon-keyboard">
+						<span class="i-name">icon-keyboard<br/>键盘/输入</span>
+						<span class="i-code">\e8ae</span>
+						</i>
+
+						<i class="icon-flag-1">
+						<span class="i-name">icon-flag-1<br/>旗帜1</span>
+						<span class="i-code">\e8a2</span>
+						</i>
+
+						<i class="icon-flag-2">
+						<span class="i-name">icon-flag-2<br/>旗帜2</span>
+						<span class="i-code">\e8a3</span>
+						</i>
+
+						<i class="icon-flag-3">
+						<span class="i-name">icon-flag-3<br/>旗帜3</span>
+						<span class="i-code">\e8d6</span>
+						</i>
+
+						<i class="icon-flag-4">
+						<span class="i-name">icon-flag-4<br/>旗帜4</span>
+						<span class="i-code">\e8d7</span>
+						</i>
+
+						<i class="icon-book">
+						<span class="i-name">icon-book<br/>书/阅读</span>
+						<span class="i-code">\e8c5</span>
+						</i>
+
+						<i class="icon-driver">
+						<span class="i-name">icon-driver<br/>方向盘/控制</span>
+						<span class="i-code">\e8c6</span>
+						</i>
+
+						<i class="icon-rec">
+						<span class="i-name">icon-rec<br/>语音/录音</span>
+						<span class="i-code">\e8d1</span>
+						</i>
+
+						<i class="icon-shutdown">
+						<span class="i-name">icon-shutdown<br/>开关</span>
+						<span class="i-code">\e8db</span>
+						</i>
+
+						<i class="icon-launch">
+						<span class="i-name">icon-launch<br/>火箭/启动器</span>
+						<span class="i-code">\e8d0</span>
+						</i>
+
+						<i class="icon-idea">
+						<span class="i-name">icon-idea<br/>灯泡/灵感</span>
+						<span class="i-code">\e8dc</span>
+						</i>
+
+						<i class="icon-pc">
+						<span class="i-name">icon-pc<br/>笔记本电脑</span>
+						<span class="i-code">\e8d8</span>
+						</i>
+
+						<i class="icon-numbers-1">
+						<span class="i-name">icon-numbers-1<br/>数据1</span>
+						<span class="i-code">\e8cc</span>
+						</i>
+
+						<i class="icon-numbers-2">
+						<span class="i-name">icon-numbers-2<br/>数据2</span>
+						<span class="i-code">\e8cd</span>
+						</i>
+
+						<i class="icon-numbers-3">
+						<span class="i-name">icon-numbers-3<br/>数据3</span>
+						<span class="i-code">\e8ce</span>
+						</i>
+
+						<i class="icon-numbers-4">
+						<span class="i-name">icon-numbers-1<br/>数据4</span>
+						<span class="i-code">\e8cf</span>
+						</i>
+
+						<i class="icon-print">
+						<span class="i-name">icon-print<br/>打印</span>
+						<span class="i-code">\e8e0</span>
+						</i>
+						
+						<i class="icon-money-o">
+						<span class="i-name">icon-money-o<br/>金钱</span>
+						<span class="i-code">\e8eb</span>
+						</i>
+						
+						<i class="icon-money-i">
+						<span class="i-name">icon-money-i<br/>金钱实心</span>
+						<span class="i-code">\e8ea</span>
+						</i>
+						
+						<i class="icon-seal">
+						<span class="i-name">icon-seal<br/>印章</span>
+						<span class="i-code">\e8ed</span>
+						</i>
+						
+						<i class="icon-seal-2">
+						<span class="i-name">icon-seal-2<br/>印章实心</span>
+						<span class="i-code">\e65c</span>
+						</i>
+						
+						<i class="icon-tie">
+						<span class="i-name">icon-tie<br/>领带</span>
+						<span class="i-code">\e8f1</span>
+						</i>
+
+						</span>
+
+						<h2 class="font-title">用户</h2>
+						<span class="box">
+
+						<i class="icon-o-user">
+						<span class="i-name">icon-o-user<br/>用户</span>
+						<span class="i-code">\e84e</span>
+						</i>
+
+						<i class="icon-i-user">
+						<span class="i-name">icon-i-user<br/>用户实心</span>
+						<span class="i-code">\e821</span>
+						</i>
+
+						<i class="icon-o-users">
+						<span class="i-name">icon-o-users<br/>用户组</span>
+						<span class="i-code">\e84e</span>
+						</i>
+
+						<i class="icon-i-users">
+						<span class="i-name">icon-i-users<br/>用户组实心</span>
+						<span class="i-code">\e84f</span>
+						</i>
+
+						<i class="icon-o-interview">
+						<span class="i-name">icon-o-interview<br/>面试</span>
+						<span class="i-code">\e88b</span>
+						</i>
+
+						<i class="icon-i-interview">
+						<span class="i-name">icon-i-interview<br/>面试实心</span>
+						<span class="i-code">\e88c</span>
+						</i>
+
+						<i class="icon-o-personal">
+						<span class="i-name">icon-o-personal<br/>用户列表</span>
+						<span class="i-code">\e892</span>
+						</i>
+
+						<i class="icon-i-personal">
+						<span class="i-name">icon-i-personal<br/>用户列表实心</span>
+						<span class="i-code">\e896</span>
+						</i>
+
+						<i class="icon-o-follow">
+						<span class="i-name">icon-o-follow<br/>加关注</span>
+						<span class="i-code">\e893</span>
+						</i>
+
+						<i class="icon-i-follow">
+						<span class="i-name">icon-i-follow<br/>加关注实心</span>
+						<span class="i-code">\e88f</span>
+						</i>
+
+						<i class="icon-o-following">
+						<span class="i-name">icon-o-following<br/>已关注</span>
+						<span class="i-code">\e894</span>
+						</i>
+
+						<i class="icon-i-following">
+						<span class="i-name">icon-i-following<br/>已关注实心</span>
+						<span class="i-code">\e890</span>
+						</i>
+						
+						<i class="icon-human-o">
+						<span class="i-name">icon-human-o<br/>人类</span>
+						<span class="i-code">\e8e9</span>
+						</i>
+
+						<i class="icon-human-i">
+						<span class="i-name">icon-human-i<br/>人类实心</span>
+						<span class="i-code">\e8e8</span>
+						</i>
+
+						</span>
+
+						<h2 class="font-title">LOGO</h2>
+						<span class="box">
+
+						<i class="icon-logo-100offer">
+						<span class="i-name">icon-logo-100offer<br/>100offer</span>
+						<span class="i-code">\e826</span>
+						</i>
+
+						<i class="icon-logo-behance">
+						<span class="i-name">icon-logo-behance<br/>Bēhance</span>
+						<span class="i-code">\e827</span>
+						</i>
+
+						<i class="icon-logo-dribbble">
+						<span class="i-name">icon-logo-dribbble<br/>Dribbble</span>
+						<span class="i-code">\e828</span>
+						</i>
+
+						<i class="icon-logo-facebook">
+						<span class="i-name">icon-logo-facebook<br/>Facebook</span>
+						<span class="i-code">\e829</span>
+						</i>
+
+						<i class="icon-logo-github">
+						<span class="i-name">icon-logo-github<br/>GitHub</span>
+						<span class="i-code">\e82a</span>
+						</i>
+
+						<i class="icon-logo-linkedin">
+						<span class="i-name">icon-logo-linkedin<br/>Linkedin</span>
+						<span class="i-code">\e82b</span>
+						</i>
+
+						<i class="icon-logo-twitter">
+						<span class="i-name">icon-logo-twitter<br/>Twitter</span>
+						<span class="i-code">\e82c</span>
+						</i>
+
+						<i class="icon-logo-weibo">
+						<span class="i-name">icon-logo-weibo<br/>微博</span>
+						<span class="i-code">\e82d</span>
+						</i>
+
+						<i class="icon-logo-weixin">
+						<span class="i-name">icon-logo-weixin<br/>微信</span>
+						<span class="i-code">\e82e</span>
+						</i>
+
+						<i class="icon-logo-zhanku">
+						<span class="i-name">icon-logo-zhanku<br/>站酷</span>
+						<span class="i-code">\e82f</span>
+						</i>
+
+						<i class="icon-logo-zhihu">
+						<span class="i-name">icon-logo-zhihu<br/>知乎</span>
+						<span class="i-code">\e830</span>
+						</i>
+
+						<i class="icon-logo-amazon">
+						<span class="i-name">icon-logo-amazon<br/>Amazon</span>
+						<span class="i-code">\e875</span>
+						</i>
+
+						<i class="icon-logo-android">
+						<span class="i-name">icon-logo-android<br/>Android</span>
+						<span class="i-code">\e876</span>
+						</i>
+
+						<i class="icon-logo-apple">
+						<span class="i-name">icon-logo-apple<br/>Android</span>
+						<span class="i-code">\e877</span>
+						</i>
+
+						<i class="icon-logo-chrome">
+						<span class="i-name">icon-logo-chrome<br/>Chrome</span>
+						<span class="i-code">\e878</span>
+						</i>
+
+						<i class="icon-logo-google">
+						<span class="i-name">icon-logo-google<br/>Google</span>
+						<span class="i-code">\e87a</span>
+						</i>
+
+						<i class="icon-logo-green">
+						<span class="i-name">icon-logo-green<br/>GreenHouse</span>
+						<span class="i-code">\e87b</span>
+						</i>
+
+						<i class="icon-logo-cat">
+						<span class="i-name">icon-logo-cat<br/>Dr.cat</span>
+						<span class="i-code">\e881</span>
+						</i>
+
+						<i class="icon-logo-cat2">
+						<span class="i-name">icon-logo-cat2<br/>Dr.cat2</span>
+						<span class="i-code">\e8e5</span>
+						</i>
+
+						<i class="icon-logo-instagram">
+						<span class="i-name">icon-logo-instagram<br/>Instagram</span>
+						<span class="i-code">\e881</span>
+						</i>
+
+						<i class="icon-logo-youzhao">
+						<span class="i-name">icon-logo-youzhao<br/>有招</span>
+						<span class="i-code">\e8d4</span>
+						</i>
+
+						<i class="icon-logo-youzhao2">
+						<span class="i-name">icon-logo-youzhao2<br/>有招2</span>
+						<span class="i-code">\e8d5</span>
+						</i>
+
+						<i class="icon-edge">
+						<span class="i-name">icon-edge<br/>Edge</span>
+						<span class="i-code">\e8a1</span>
+						</i>
+
+						<i class="icon-ffox">
+						<span class="i-name">icon-ffox<br/>Firefox</span>
+						<span class="i-code">\e8a1</span>
+						</i>
+
+						<i class="icon-o-safari">
+						<span class="i-name">icon-o-safari<br/>Safari</span>
+						<span class="i-code">\e8c4</span>
+						</i>
+
+						<i class="icon-i-safari">
+						<span class="i-name">icon-i-safari<br/>Safari2</span>
+						<span class="i-code">\e8c3</span>
+						</i>
+						
+						<i class="icon-logo-fish">
+						<span class="i-name">icon-logo-fish<br/>fish</span>
+						<span class="i-code">\e65d</span>
+						</i>
+
+						</span>
+
+					</div>
+
+
+					<div class="tag" style="display:none">
+						<p><br/>2018-06-11 「New」迁移至iconfont制作字体，增加实心class、实心印章(1.2.2)</p>
+						<p><br/>2018-04-25 增加Dr.cat、公司、人类、 金钱、移动、印章、表单类型、领带(1.2.1)</p>
+						<p><br/>2018-04-02 增加推进与返回圆圈版本、打印机等、全新设计的响应式界面与分类 (1.2)</p>
+						<p><br/>2017-12-14 增加满意不满意对勾icon，重新设计了用户icon组与电脑组 (1.1)</p>
+						<p><br/>2017-12-07 增加左右横线箭头 修改日历2样式 (1.0.4)</p>
+						<p><br/>2017-12-04 增加实心home与level 修改日历2样式 (1.0.3)</p>
+						<p><br/>2017-11-29 增加关注系列 邮件发送收信 个人中心 筛选等 icon (1.0.2)</p>
+						<p><br/>2017-11-28 增加面试 icon (1.0.1)</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+</body>
+<script>
+	var tabs = function() {
+		function tag(name, elem) {
+			return (elem || document).getElementsByTagName(name);
+		}
+
+		function id(name) {
+			return document.getElementById(name);
+		}
+
+		function first(elem) {
+			elem = elem.firstChild;
+			return elem && elem.nodeType == 1 ? elem : next(elem);
+		}
+
+		function next(elem) {
+			do {
+				elem = elem.nextSibling;
+			} while (
+				elem && elem.nodeType != 1
+			)
+			return elem;
+		}
+		return {
+			set: function(elemId, tabId) {
+				var elem = tag("li", id(elemId));
+				var tabs = tag("div", id(tabId));
+				var listNum = elem.length;
+				var tabNum = tabs.length;
+				for (var i = 0; i < listNum; i++) {
+					elem[i].onclick = (function(i) {
+						return function() {
+							for (var j = 0; j < tabNum; j++) {
+								if (i == j) {
+									tabs[j].style.display = "block";
+									elem[j].firstChild.className = "selected";
+								} else {
+									tabs[j].style.display = "none";
+									elem[j].firstChild.className = "";
+								}
+							}
+						}
+					})(i)
+				}
+			}
+		}
+	}();
+	tabs.set("nav", "menu_con");
+
+
+	function toggleCodes(on) {
+		var obj = document.getElementById('icons');
+
+		if (on) {
+			obj.className += ' codesOn';
+		} else {
+			obj.className = obj.className.replace(' codesOn', '');
+		}
+	}
+</script>
+
+</html>

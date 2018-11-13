@@ -1,0 +1,72 @@
+@import '~assets/css/variables.less';
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(51, 51, 51, 0.75);
+}
+
+.container {
+  height: 100%;
+  top: 0;
+  position: fixed;
+  margin-left: 50%;
+  border-radius: @base-border-radius;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: @base-border-radius;
+  background: white;
+  // background: #f3f3f3;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.toolWrapper {
+  width: 46px;
+  position: absolute;
+  right: -54px;
+}
+
+.closeBtn {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: @white;
+  &:hover {
+    color: @danger-color;
+  }
+}
+
+.toolBtn {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: @white;
+  cursor: pointer;
+  &:hover {
+    color: @primary-color;
+  }
+}
+
+.disable {
+  color: @gray-color;
+  cursor: not-allowed;
+  &:hover {
+    color: @gray-color;
+  }
+}

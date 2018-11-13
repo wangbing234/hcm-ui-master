@@ -1,0 +1,141 @@
+@import '~assets/css/mixins.less';
+
+.subMenu {
+  .transition;
+  color: #889db0;
+  background-color: #243747;
+  padding: 0 0 0 20px;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    background: #3d5162;
+  }
+  // 缩小版的菜单
+  &.min {
+    padding-left: 13px;
+    padding-right: 13px;
+    &.expanded {
+      .siderMenuDropdown {
+        transform: scale(1);
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    & .titleWrapper {
+      margin-right: 0;
+    }
+
+    & .title [class^='icon-'] {
+      &:before {
+        margin-right: 0;
+      }
+    }
+    .titleText {
+      display: none;
+    }
+  }
+
+  // 下拉菜单展开样式
+  &.expanded {
+    background-color: #1c2c38;
+    .title {
+      color: #fff;
+      // 菜单项图标
+      > span[class^='icon-'] {
+        color: #50c286;
+      }
+    }
+    // 箭头图标
+    .titleWrapper {
+      > span[class^='icon-'] {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.title {
+  .transition;
+  font-size: 14px;
+  align-items: center;
+  white-space: nowrap;
+  display: flex;
+  overflow: hidden;
+  & [class^='icon-']:before {
+    .transition;
+    font-size: 24px;
+    margin-right: 20px;
+  }
+
+  &:hover + .fixedTitle {
+    display: block;
+  }
+
+  ~ span[class^='icon-']:before {
+    .transition;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-right: 20px;
+}
+
+// mini 菜单的子菜单
+.siderMenuDropdown {
+  transition: all 0.2s;
+  transform: scale(0);
+  transform-origin: left top;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  min-width: 140px;
+  z-index: 3;
+  left: 55px;
+  top: 2px;
+}
+
+.children {
+  overflow: hidden;
+  background-color: inherit;
+}
+
+.child {
+  height: 36px;
+  line-height: 36px;
+  margin-left: 40px;
+  & > a {
+    color: #889db0;
+    text-decoration: none;
+    transform: none;
+    display: block;
+    padding-left: 10px;
+    transition: unset;
+  }
+
+  &:hover,
+  &.selected {
+    & > a {
+      color: #fff;
+    }
+    background: #35a067;
+  }
+}
+
+.fixedTitle {
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: 70px;
+  background-color: #556a7d;
+  z-index: 2;
+  white-space: nowrap;
+  padding: 3px 5px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 13px;
+}

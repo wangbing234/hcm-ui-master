@@ -1,0 +1,79 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+
+.assignments{
+  background:rgba(249,249,249,1);
+  // padding:20px;
+}
+.table_Body{
+  padding: 20px;
+  padding-top: 0px;
+
+}
+.header {
+  .info{
+    height:110px;
+    padding: 20px;
+    font-size:14px;
+    font-weight:500;
+    color:rgba(102,102,102,1);
+    line-height:20px;
+    background:rgba(255,255,255,1);
+    box-shadow:0 -4px 0 0 rgba(243,243,243,1);
+    h3{
+     height:30px;
+     font-size:24px;
+     font-weight:500;
+     color:rgba(51,51,51,1);
+     line-height:30px;
+    }
+
+  }
+
+  & .name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-right: 40px;
+  }
+
+  & .filterBar {
+    padding: 20px;
+    display: flex;
+    flex: 1;
+  }
+
+  & .filter {
+    width: 120px;
+    margin-right: 10px;
+    font-size: 13px;
+
+    :global(.ant-select-selection) {
+      background-color: transparent;
+    }
+  }
+
+  & .keyword {
+    width: 100%;
+    font-size: 13px;
+    :global(.ant-input) {
+      background-color: transparent;
+    }
+  }
+}
+
+.tooltip {
+  &:global(.ant-tooltip) {
+    padding-top: 0;
+  }
+  & :global(.ant-tooltip-arrow) {
+    display: none;
+  }
+  & :global(.ant-tooltip-inner) {
+    max-width: none;
+    min-height: 0;
+    background-color: #556a7d;
+    padding: 2px;
+  }
+}

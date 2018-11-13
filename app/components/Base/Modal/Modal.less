@@ -1,0 +1,57 @@
+.wrap {
+  text-align: center;
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+  }
+  & :global(.ant-modal) {
+    top: 0;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 24px;
+  }
+  & :global(.ant-modal-content) {
+    padding: 40px;
+  }
+  & :global(.ant-modal-header) {
+    border: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  & :global(.ant-modal-title) {
+    font-weight: 500;
+    font-size: 20px;
+    color: #337dbc;
+  }
+  & :global(.ant-modal-body) {
+    padding: 0;
+  }
+  & :global(.ant-modal-footer) {
+    border: none;
+    padding: 0;
+    margin-top: 40px;
+  }
+  & :global(.ant-modal-footer) button + button {
+    margin-left: 10px;
+  }
+  & :global(.ant-modal-close) {
+    top: 36px;
+    right: 40px;
+  }
+  & :global(.ant-modal-close-x) {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 24px;
+    font-weight: normal;
+
+    &:before {
+      content: '\e80a';
+      font-family: uuicon, sans-serif !important;
+    }
+  }
+}

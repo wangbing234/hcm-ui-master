@@ -1,0 +1,81 @@
+@import '~assets/css/variables.less';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  > .header {
+    height: 22px;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    color: @dark-color;
+    margin: 0 0 20px 0;
+  }
+}
+
+.formalWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  height: 56px;
+  border-radius: 4px;
+  background-color: @white;
+  box-shadow:0px 2px 2px 0px rgba(51, 51, 51, 0.2);
+
+  > .formalButton {
+    width: 165px;
+    height: 36px;
+    margin: 10px 0 0 10px;
+  }
+}
+
+.probationWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  height: 120px;
+  border-radius: 4px 4px 0 0;
+  background-color: @white;
+  box-shadow: 0 2px 2px 0 rgba(51, 51, 51, 0.2), inset 0 -4px 0 0 #eaeaea;
+
+  > .baseInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    > .finishDate {
+      display: block;
+      height: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: @dark-color;
+    }
+
+    > .remainDate {
+      margin: 10px 0;
+      display: block;
+      height: 20px;
+      font-size: 12px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.67;
+      letter-spacing: normal;
+      color: @grayer-color;
+    }
+  }
+
+  > .progress {
+    height: 4px;
+    border-radius: 0 0 2px 2px;
+  }
+}

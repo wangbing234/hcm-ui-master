@@ -1,0 +1,103 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+.payroll{
+  position: relative;
+  padding: 0 20px 20px 20px;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  .content{
+    padding: 40px 0 20px 0;
+    line-height: 33px;
+  }
+}
+
+.addBtn {
+  margin-top: 10px;
+  margin-right: 2px;
+  background: #f9f9f9;
+  color: @dark-color;
+  border-color: #f3f3f3;
+}
+
+.bottom{
+  margin-bottom: 20px;
+  label{
+    width: 174px
+  }
+}
+
+.title{
+  font-size:16px;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:22px;
+  margin: 20px 0 20px 0
+}
+:global{
+  .ant-input-group-addon{
+    background-color: #fff;
+    border-left-style: 0px  solid white
+  }
+}
+
+.housingTooltip{
+  float: right;
+  :global {
+    .ant-tooltip-inner{
+      width: 340px;
+      height: 45px;
+      background: rgba(85,106,125,1);
+      border-radius: 4px;
+      font-size:13px;
+      font-weight:400;
+      color:rgba(255,255,255,1);
+      line-height:18px;
+    }
+    .ant-tooltip-arrow{
+      border-style: none
+    }
+  }
+}
+
+.socialTooltip{
+  float: right;
+  :global {
+    .ant-tooltip-inner{
+      width: 320px;
+      height: 45px;
+      background: rgba(85,106,125,1);
+      border-radius: 4px;
+      font-size:13px;
+      font-weight:400;
+      color:rgba(255,255,255,1);
+      line-height:18px;
+    }
+    .ant-tooltip-arrow{
+      border-style: none
+    }
+  }
+}
+
+.lint{
+  width: 13px;
+  height: 18px;
+  font-size: 13px;
+  color: rgba(88,155,211,1);
+  line-height: 18px;
+  float: right;
+}
+
+.deleteBtn {
+  color: rgba(241,91,80,1);
+}
+
+.editBtn {
+  color: rgba(88,155,211,1);
+}
+
+.actions {
+  text-align: right;
+  a {padding-left: 20px;}
+}

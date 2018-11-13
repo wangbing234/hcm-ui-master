@@ -1,0 +1,32 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+.main {
+  background-color: #eaeaea;
+  padding: 40px 10px;
+  :global {
+    .ant-layout-sider-children {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.header {
+  font-size: 20px;
+  color: @dark-color;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+.search {
+  margin-top: 20px;
+}
+
+.lists {
+  margin-top: 10px;
+  margin-right: -20px;
+  overflow-y: auto;
+  flex: 1;
+}

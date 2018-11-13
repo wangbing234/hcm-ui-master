@@ -1,0 +1,117 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/theme.less';
+@import '~assets/css/mixins.less';
+
+@prefix-cls: ~'ant-select';
+
+:global {
+  .@{prefix-cls} {
+    transition: all 0.15s;
+    outline: none;
+    width: 100%;
+    &-transparent {
+      .@{prefix-cls}-selection {
+        background-color: transparent;
+      }
+    }
+    &-focused {
+      .@{prefix-cls}-selection {
+        box-shadow: none;
+        border-color: @primary-color;
+      }
+    }
+    &-arrow {
+      color: @dark-color;
+      transform: scaleX(1.2);
+      margin-top: -4px;
+    }
+    &-disabled {
+      .@{prefix-cls}-arrow {
+        color: @border-color-base;
+      }
+    }
+    &-error {
+      .@{prefix-cls}-selection {
+        border-color: @danger-color;
+        .@{prefix-cls}-arrow {
+          color: @danger-color;
+          transform: scaleX(1.2);
+          margin-top: -4px;
+        }
+        &:focus {
+          border-color: @danger-color-middle;
+          box-shadow: 0 0 0 2px rgba(241, 91, 80, 0.2);
+        }
+        &:hover {
+          border-color: @danger-color;
+        }
+      }
+    }
+
+
+    &-dropdown {
+      box-shadow: 0 1px 5px 0 rgba(51, 51, 51, 0.2);
+      min-width: 140px;
+      &-menu {
+        &-item {
+          padding: 9px 10px;
+          transition: background 0.15s ease;
+          color: @dark-color;
+          &:hover {
+            background-color: @gray-color-light;
+          }
+          &-selected, &-selected:hover {
+            background-color: @primary-color;
+            color: @white;
+            font-weight: normal;
+          }
+          &-disabled, &-disabled:hover {
+            color: @gray-color;
+            background: none;
+          }
+        }
+      }
+
+      &.@{prefix-cls}-dropdown--multiple {
+        .@{prefix-cls}-dropdown-menu-item {
+          &:after {
+            color: @gray-color;
+            font-family: uuicon, serif;
+            content: '\e855';
+          }
+          &:hover,
+          &-active {
+            &:after {
+              color: @primary-color;
+            }
+          }
+          &-selected {
+            &:after {
+              color: @white;
+              content: '\e8ac';
+            }
+            &:hover {
+              &:after {
+                color: @white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-selection--multiple {
+      .@{prefix-cls}-selection__choice {
+        border: 0;
+        line-height: 28px!important;
+        color: @primary-color;
+        background-color: @primary-color-light;
+        border-radius: @base-border-radius;
+        &__remove {
+          color: @primary-color;
+          top: 1px;
+        }
+      }
+    }
+  }
+}

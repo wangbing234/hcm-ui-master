@@ -1,0 +1,68 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+@prefix-cls: ~'ant-switch';
+
+.stylefn(@type: primary, @color, @checkedColor) {
+  .@{prefix-cls} {
+    &-@{type} {
+      background-color: #ccc;
+      &.@{prefix-cls}-checked {
+        background-color: @checkedColor;
+      }
+    }
+  }
+}
+
+:global {
+  .@{prefix-cls} {
+    &::before,
+    &::after {
+      width: 24px;
+      height: 24px;
+      top: -4px;
+      left: -2px;
+      border: 1px solid #eaeaea;
+      box-shadow: 0 2px 2px 0 rgba(51, 51, 51, 0.2);
+    }
+    &-checked {
+      &::before,
+      &::after {
+        margin-left: 22px;
+      }
+      &:active {
+        &::before,
+        &::after {
+          margin-left: 22px;
+        }
+      }
+    }
+    &-small {
+      &::before,
+      &::after {
+        width: 20px;
+        height: 20px;
+        top: -3px;
+        left: -3px;
+      }
+      &.@{prefix-cls}-checked {
+        &::before,
+        &::after {
+          margin-left: -16px;
+        }
+        &:active {
+          &::before,
+          &::after {
+            margin-left: -16px;
+          }
+        }
+      }
+    }
+  }
+  .stylefn(primary, @primary-color-light, @primary-color);
+  .stylefn(danger, @danger-color-light, @danger-color);
+  .stylefn(warning, @warning-color-light, @warning-color);
+  .stylefn(success, @success-color-light, @success-color);
+  .stylefn(ink, @ink-color-light, @ink-color);
+  .stylefn(dark, #ccc, #999);
+}

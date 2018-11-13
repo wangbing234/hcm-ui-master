@@ -1,0 +1,51 @@
+@import '~assets/css/variables.less';
+
+.confirm {
+  color: @dark-color;
+  font-weight:400;
+  :global {
+    .ant-modal-body{
+      padding: 40px;
+    }
+    .ant-modal-close {
+      top: 42px;
+      right: 40px;
+      &-x {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 24px;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+.wrapper {
+  padding-bottom: 15px;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 33px;
+  font-weight: 500;
+  color: @danger-color;
+}
+
+.content {
+  color: @dark-color;
+  font-size:13px;
+  line-height:18px;
+  margin-top: 15px;
+  font-weight:400;
+  min-height: 100px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 -5px;
+  :global(.ant-btn) {
+    margin: 0 5px;
+  }
+}

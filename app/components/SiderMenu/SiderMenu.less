@@ -1,0 +1,77 @@
+.switchBtn {
+  height: 30px;
+  line-height: 30px;
+  color: #889db0;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  background: #3d5162;
+  cursor: pointer;
+}
+
+.subMenu {
+  display: block;
+  color: #889db0;
+  padding: 0 0 0 20px;
+  user-select: none;
+  cursor: pointer;
+  background-color: #243747;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+
+  &:hover {
+    background-color: #2d4458;
+    .title {
+      color: #fff;
+    }
+  }
+
+  &.collapsed {
+    width: 60px;
+    padding: 0 0 0 10px;
+  }
+
+  &.selected {
+    background-color: #2d4458;
+    .title {
+      color: #fff;
+    }
+  }
+}
+
+.title {
+  height: 50px;
+  margin-right: 20px;
+  font-size: 14px;
+  align-items: center;
+  white-space: nowrap;
+  display: flex;
+  overflow: hidden;
+  span {
+    text-decoration: none;
+  }
+
+  & [class^='icon-']:before {
+    font-size: 24px;
+    margin-right: 20px;
+  }
+
+  &:hover + .fixedTitle {
+    display: block;
+  }
+}
+
+.fixedTitle {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 70px;
+  background-color: #556a7d;
+  z-index: 2;
+  white-space: nowrap;
+  padding: 3px 5px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 13px;
+}

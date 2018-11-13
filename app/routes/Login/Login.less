@@ -1,0 +1,72 @@
+@import '~assets/css/variables.less';
+@import '~assets/css/mixins.less';
+
+.main {
+  margin: auto;
+  width: 280px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  line-height: 33px;
+  color: @dark-color;
+  font-weight: 500;
+}
+
+.error {
+  margin-bottom: 15px;
+  border-radius: @base-border-radius;
+  background: @danger-color-light;
+  padding: 15px;
+  font-size: 13px;
+  line-height: 1;
+  color: @danger-color;
+}
+
+.tabs {
+  :global {
+    .hcm-tabs-nav {
+      margin-bottom: 16px;
+      display: flex;
+      background-color: @white;
+      border-radius: @base-border-radius;
+      &-item {
+        width: 50%;
+        font-weight: 400;
+        text-align: center;
+        cursor: pointer;
+        border-radius: @base-border-radius;
+        line-height: 36px;
+        color: #999;
+        &-active {
+          font-weight: 500;
+          color: #fff;
+          background-color: @primary-color;
+          box-shadow: 0 1px 5px 0 rgba(51, 51, 51, 0.2);
+        }
+      }
+    }
+  }
+}
+
+.formbox {
+  margin-bottom: 20px;
+  label:after {
+    color: @danger-color;
+  }
+  > span {
+    display: block;
+    margin-top: 5px;
+  }
+}
+
+.verificationBtn {
+  padding: 0 10px;
+}
+
+.forgotPassword {
+  float: right;
+}
